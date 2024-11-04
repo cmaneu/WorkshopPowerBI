@@ -6,11 +6,11 @@ Deux URLs seront utilisées pour accéder à ces données :
 1. https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json
 2. https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json
 
-Pour importer les données de ces APIs nous allons Récupere les données via le Connecteur Web : 
+Pour importer les données de ces APIs nous allons Récuperer les données via le Connecteur Web : 
 1. Get Data > More ... > Web > Connect 
 2. Coller l'URL dans l'invite 
 3. Répéter l'étape depuis Power Query pour obtenir les deux requêtes côte à côte 
-4. Renommer les deux requêtes en utilisant la partie proriété sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via Click droit > Rename :
+4. Renommer les deux requêtes en utilisant la partie propriétés sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via Click droit > Rename :
   - station_status > Etats
   - station_information > Stations
 
@@ -21,11 +21,11 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 2. Convertir le document en tableau exploitable 
 3. Transposer les lignes en colonnes
 4. Utiliser la première ligne comme en-tête
-5. Exposer les données de la colonnes Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le prefixe de la colonne. 
-6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'expositon doit être faite sur les valeurs ou sur de novuelles lignes. 
+5. Exposer les données de la colonne Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
+6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
-  - Retirez le prefixe
+  - Retirez le préfixe
   - Lister l'ensemble des colonnes disponibles
 
 ## Etats
@@ -33,18 +33,18 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 2. Convertir le document en tableau exploitable 
 3. Transposer les lignes en colonnes
 4. Utiliser la première ligne comme en-tête
-5. Exposer les données de la colonnes Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le prefixe de la colonne. 
-6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'expositon doit être faite sur les valeurs ou sur de novuelles lignes. 
+5. Exposer les données de la colonne Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
+6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
-  - Retirez le prefixe
+  - Retirez le préfixe
   - Lister l'ensemble des colonnes disponibles 
 
 # Nettoyage des données :
 ## Stations
 1. Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
-2. Retirez les colonnnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
-3. En consultant l'URL des stations_status (voir partie 1, 2) ), déterminez si l'usage des colonnes stationCode et station_Id est pertinant. Gardez la colonne la plus performante. 
+2. Retirez les colonnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
+3. En consultant l'URL des stations_status (voir partie 1, 2) ), déterminez si l'usage des colonnes stationCode et station_Id est pertinent. Gardez la colonne la plus performante. 
 4. Rennomez les colonnes (en déduisant la colonne que vous avez retiré à l'étape 3) : 
   - station_id > Station Id
   - stationCode > Station Code
@@ -75,7 +75,10 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 Il est important de prendre du recul une fois les étapes appliquées. L'ordre des étapes est important : 
 - Plus les étapes appliquées sont nombreuses, et plus l'ordre est important
 - Les étapes les plus discriminantes doivent être faites en premier : les filtres, suppression de colones ...
-- Les étapes qui se répètent peuvent être unifiées et mises ensemble (renommer toutes les colonnes d'un coup) 
+- Les étapes qui se répètent peuvent être unifiées et mises ensemble (renommer toutes les colonnes d'un coup)
+
+Le but de cet exercice est maintenant d'identifier les étapes qui se répètent, ou celles qui pouvaient être faites au plus tôt, et de les réorganiser. Il est possible de réorganiser les étapes appliquées en Cliquant/Glissant les étapes. Attention : si une étape dépend d'une autre, il faut l'anticiper. 
+- Indice : Les colonnes lastUpdateOrder et ttl auraient pu être retirées dès le départ ... Chercher un moyen de les enlever le plus tôt possible. 
 
 # Paramétrage des requêtes 
 
