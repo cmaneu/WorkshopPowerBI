@@ -26,6 +26,18 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
   - Retirez le prefixe
+  - Lister l'ensemble des colonnes disponibles
+
+## Etats
+1. Supprimer les étapes générées par le moteur Power Query sur la droite en retirant les étapes les unes après les autres 
+2. Convertir le document en tableau exploitable 
+3. Transposer les lignes en colonnes
+4. Utiliser la première ligne comme en-tête
+5. Exposer les données de la colonnes Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le prefixe de la colonne. 
+6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'expositon doit être faite sur les valeurs ou sur de novuelles lignes. 
+7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
+8. Exposer le contenu des Lignes : 
+  - Retirez le prefixe
   - Lister l'ensemble des colonnes disponibles 
 
 # Nettoyage des données :
@@ -58,6 +70,12 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 6. Utilisez la fonctionnalité de transformation/ajout de colonnes par la méthode de votre choix pour transformer les colonnes "... Flag" en colonnes true/false. 
 7. Changez ensuite le type de la colonne en type true/false 
 8. Trouvez un moyen de de transformer la colonnes last_reported en valeur au format Datetime. 
+
+## General 
+Il est important de prendre du recul une fois les étapes appliquées. L'ordre des étapes est important : 
+- Plus les étapes appliquées sont nombreuses, et plus l'ordre est important
+- Les étapes les plus discriminantes doivent être faites en premier : les filtres, suppression de colones ...
+- Les étapes qui se répètent peuvent être unifiées et mises ensemble (renommer toutes les colonnes d'un coup) 
 
 # Paramétrage des requêtes 
 
