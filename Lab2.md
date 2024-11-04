@@ -23,11 +23,33 @@
 1. ```Nombre de stations = COUNTROWS(Stations)```
 2. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```
 3. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```
-4. ```CALCULATE(
-    [Nombre de stations]
-    , 'Etats'[Total Available Bikes] = 0 
-)```
-5. ```x```
+4. ```
+    Nombre de stations pleines = CALCULATE(
+        [Nombre de stations]
+        , 'Etats'[Total Available Docks] = 0 
+    )
+```
+5. ```
+    Nombre de stations vides = CALCULATE(
+        [Nombre de stations]
+        , 'Etats'[Total Available Bikes] = 0 
+    )
+```
+5. ```
+    x
+```
+5. ```
+    x
+```
+5. ```
+    x
+```
+5. ```
+    x
+```
+5. ```
+    x
+```
        
 # Scenario What-If
 
