@@ -7,10 +7,10 @@ Deux URLs seront utilisées pour accéder à ces données :
 2. https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json
 
 Pour importer les données de ces APIs nous allons Récuperer les données via le Connecteur Web : 
-1. Get Data > More ... > Web > Connect 
+1. _Get Data > More ... > Web > Connect _
 2. Coller l'URL dans l'invite 
 3. Répéter l'étape depuis Power Query pour obtenir les deux requêtes côte à côte 
-4. Renommer les deux requêtes en utilisant la partie propriétés sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via Click droit > Rename :
+4. Renommer les deux requêtes en utilisant la partie propriétés sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via _Click droit > Rename_ :
   - station_status > Etats
   - station_information > Stations
 
@@ -21,7 +21,7 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 2. Convertir le document en tableau exploitable 
 3. Transposer les lignes en colonnes
 4. Utiliser la première ligne comme en-tête
-5. Exposer les données de la colonne Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
+5. Exposer les données de la colonne Data grâce au bouton _Expand_ situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
 6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
@@ -33,8 +33,8 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 2. Convertir le document en tableau exploitable 
 3. Transposer les lignes en colonnes
 4. Utiliser la première ligne comme en-tête
-5. Exposer les données de la colonne Data grâce au bouton "Expand" situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
-6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
+5. Exposer les données de la colonne Data grâce au bouton _Expand_ situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
+6. Etendre la liste _stations_ en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
   - Retirez le préfixe
@@ -43,7 +43,7 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 # Nettoyage des données :
 ## Stations
 1. Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
-2. Retirez les colonnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
+2. Retirez les colonnes lastUpdatedOther et ttl, en utilisant _Ctrl + Click_ sur les deux colonnes, puis _click droit > Retirer les colonnes_. 
 3. En consultant l'URL des stations_status (voir partie 1, 2) ), déterminez si l'usage des colonnes stationCode et station_Id est pertinent. Gardez la colonne la plus performante. 
 4. Rennomez les colonnes (en déduisant la colonne que vous avez retiré à l'étape 3) : 
   - station_id > Station Id
@@ -52,11 +52,11 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
   - lat > Latitude
   - lon > Longitude
   - capacity > Capacity
-5. Déduisez le typage des colonnes pertinent selon chaque information. Utilisez si bon vous semble la fonctionnalité "Detect data types"
+5. Déduisez le typage des colonnes pertinent selon chaque information. Utilisez si bon vous semble la fonctionnalité _Detect data types_
 
 ## Etats
 1. Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
-2. Retirez les colonnnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
+2. Retirez les colonnnes lastUpdatedOther et ttl, en utilisant _Ctrl + Click_ sur les deux colonnes, puis _Click droit > Retirer les colonnes_. 
 3. Gardez la colonne la plus performante en suivant votre logique du nettoyage des information des stations. 
 4. Retirez les colonnes en double dans la table. 
 5. Renommez les colonnes :
@@ -67,7 +67,7 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
   - is_renting > Renting Flag
   - last_reported > Last Reported Date
 
-6. Utilisez la fonctionnalité de transformation/ajout de colonnes par la méthode de votre choix pour transformer les colonnes "... Flag" en colonnes true/false. 
+6. Utilisez la fonctionnalité de transformation/ajout de colonnes par la méthode de votre choix pour transformer les colonnes "... Flag" en colonnes _true/false_. 
 7. Changez ensuite le type de la colonne en type true/false 
 8. Trouvez un moyen de transformer la colonnes last_reported en valeur au format Datetime. 
 
@@ -83,22 +83,22 @@ Le but de cet exercice est maintenant d'identifier les étapes qui se répètent
 # Paramétrage des requêtes 
 
 Nous allons découvrir l'usage des paramètres pour simplifier l'évolution du tableau en remplaçant l'URL fixe par un paramètre.   
-1. Créer un nouveau paramètre appelé "URL" via l'une des deux méthodes suivantes : 
-  - Click Droit sous Query > New Parameter ... 
-  - Onglet Home > Manage Parameter > New Parameter
-2. Définir le nom sur "URL"
-3. Définir le type sur Text 
-4. Remplir la valeur dans "current value" avec ce qui est en commun dans les deux URL proposées plus haut. 
+1. Créer un nouveau paramètre appelé _URL_ via l'une des deux méthodes suivantes : 
+  - Click Droit sous _Query > New Parameter_ ... 
+  - _Onglet Home > Manage Parameter > New Parameter_
+2. Définir le nom sur _URL_
+3. Définir le type sur _Text_ 
+4. Remplir la valeur dans _Current Value_ avec ce qui est en commun dans les deux URL proposées plus haut. 
 5. Pour chaque requête Stations et Etat, répéter les étapes suivantes : 
-  - Cliquer sur la Query choisie 
-  - Dans les étapes appliquées, retrouver Source 
-  - Dans la barre de Formule, remplacer la partie fixe par le paramètre URL, et concaténer avec le reste via l'usage de URL & "string" (remplacer string par la bonne valeur)
+  - Cliquer sur la _Query_ choisie 
+  - Dans les étapes appliquées, retrouver _Source_ 
+  - Dans la barre de Formule, remplacer la partie fixe par le paramètre URL, et concaténer avec le reste via l'usage de _URL & "string"_ (remplacer string par la bonne valeur)
   - Cliquer sur la dernière étape et valider le développement. 
 
 # Appliquer les développements dans la partie Power BI 
 
 Une fois les développement effectués, appliquer les développements dans la partie Power Query : 
-1. Dans l'onglet Home, cliquer sur Appliquer les changements. 
+1. Dans l'onglet Home, cliquer sur _Appliquer les changements_. 
 
 # Table Date
 
