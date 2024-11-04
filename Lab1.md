@@ -1,6 +1,6 @@
 Dans ce Lab nous allons importer les données des APIs Vélib. 
 
----------- 1 ---------- Création des tables 
+# Création des tables
 
 Deux URLs seront utilisées pour accéder à ces données : 
 1) https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json
@@ -14,7 +14,7 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
   a) station_status > Etats
   b) station_information > Stations
 
----------- 2 ---------- Optionnel : Décortiquer le fichier JSON
+# Optionnel : Décortiquer le fichier JSON
 
 A/ Stations
 1) Supprimer les étapes générées par le moteur Power Query sur la droite en retirant les étapes les unes après les autres 
@@ -28,8 +28,8 @@ A/ Stations
   a) Retirez le prefixe
   b) Lister l'ensemble des colonnes disponibles 
 
----------- 2 ---------- Nettoyage des données :
-A/ Stations
+# Nettoyage des données :
+## Stations
 1) Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
 2) Retirez les colonnnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
 3) En consultant l'URL des stations_status (voir partie 1, 2) ), déterminez si l'usage des colonnes stationCode et station_Id est pertinant. Gardez la colonne la plus performante. 
@@ -42,7 +42,7 @@ A/ Stations
   f) capacity > Capacity
 5) Déduisez le typage des colonnes pertinent selon chaque informations. Utilisez si bon vous semble la fonctionnalité "Detect data types"
 
-B/ Etats
+## Etats
 1) Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
 2) Retirez les colonnnes lastUpdatedOther et ttl, en utilisant "Ctrl + Click" sur les deux colonnes, puis click droit et Retirer les colonnes. 
 3) Gardez la colonne la plus performante en suivant votre logique du nettoyage des information des stations. 
@@ -59,7 +59,7 @@ B/ Etats
 7) Changez ensuite le type de la colonne en type true/false 
 8) Trouvez un moyen de de transformer la colonnes last_reported en valeur au format Datetime. 
 
----------- 3 ---------- Paramétrage des requêtes 
+# Paramétrage des requêtes 
 
 Nous allons découvrir l'usage des paramètres pour simplifier l'évolution du tableau en remplaçant l'URL fixe par un paramètre.   
 1) Créer un nouveau paramètre appelé "URL" via l'une des deux méthodes suivantes : 
@@ -74,11 +74,11 @@ Nous allons découvrir l'usage des paramètres pour simplifier l'évolution du t
   c) Dans la barre de Formule, remplacer la partie fixe par le paramètre URL, et concatener avec le reste via l'usage de URL & "string" (remplacer string par la bonne valeur)
   d) Cliquer sur la dernière étape et valider le développement. 
 
----------- 4 ---------- Appliquer les développements dans la partie Power BI 
+# Appliquer les développements dans la partie Power BI 
 
 Une fois les développement effectués, appliquer les développements dans la partie Power Query : 
 1) Dans l'onglet Home, cliquer sur Appliquer les changements. 
 
----------- 5 ---------- Table Date
+# Table Date
 
 
