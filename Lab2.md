@@ -52,8 +52,9 @@
         , Stations[Capacity] > 35
     )
 
-9. ``` Capacité Station = MAX(Stations[Capacity])
-        Rang Capacité Station = RANKX( ALL( Stations ), [Capacite Station] ,,,DENSE)
+9. ```
+   Capacité Station = MAX(Stations[Capacity])
+   Rang Capacité Station = RANKX( ALL( Stations ), [Capacite Station] ,,,DENSE)
 
 10. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```
 11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
