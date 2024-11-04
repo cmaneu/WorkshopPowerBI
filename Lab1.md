@@ -52,7 +52,7 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
   - lat > Latitude
   - lon > Longitude
   - capacity > Capacity
-5. Déduisez le typage des colonnes pertinent selon chaque informations. Utilisez si bon vous semble la fonctionnalité "Detect data types"
+5. Déduisez le typage des colonnes pertinent selon chaque information. Utilisez si bon vous semble la fonctionnalité "Detect data types"
 
 ## Etats
 1. Nous allons nettoyer les données et préparer l'analyse dans notre rapport. N'hésitez pas à compléter ces étapes avec ce qui vous semble pertinent. 
@@ -69,12 +69,12 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 
 6. Utilisez la fonctionnalité de transformation/ajout de colonnes par la méthode de votre choix pour transformer les colonnes "... Flag" en colonnes true/false. 
 7. Changez ensuite le type de la colonne en type true/false 
-8. Trouvez un moyen de de transformer la colonnes last_reported en valeur au format Datetime. 
+8. Trouvez un moyen de transformer la colonnes last_reported en valeur au format Datetime. 
 
 ## General 
 Il est important de prendre du recul une fois les étapes appliquées. L'ordre des étapes est important : 
 - Plus les étapes appliquées sont nombreuses, et plus l'ordre est important
-- Les étapes les plus discriminantes doivent être faites en premier : les filtres, suppression de colones ...
+- Les étapes les plus discriminantes doivent être faites en premier : les filtres, suppression de colonnes ...
 - Les étapes qui se répètent peuvent être unifiées et mises ensemble (renommer toutes les colonnes d'un coup)
 
 Le but de cet exercice est maintenant d'identifier les étapes qui se répètent, ou celles qui pouvaient être faites au plus tôt, et de les réorganiser. Il est possible de réorganiser les étapes appliquées en Cliquant/Glissant les étapes. Attention : si une étape dépend d'une autre, il faut l'anticiper. 
@@ -92,7 +92,7 @@ Nous allons découvrir l'usage des paramètres pour simplifier l'évolution du t
 5. Pour chaque requête Stations et Etat, répéter les étapes suivantes : 
   - Cliquer sur la Query choisie 
   - Dans les étapes appliquées, retrouver Source 
-  - Dans la barre de Formule, remplacer la partie fixe par le paramètre URL, et concatener avec le reste via l'usage de URL & "string" (remplacer string par la bonne valeur)
+  - Dans la barre de Formule, remplacer la partie fixe par le paramètre URL, et concaténer avec le reste via l'usage de URL & "string" (remplacer string par la bonne valeur)
   - Cliquer sur la dernière étape et valider le développement. 
 
 # Appliquer les développements dans la partie Power BI 
