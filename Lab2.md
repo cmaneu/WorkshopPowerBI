@@ -14,7 +14,7 @@
 5. Nombre de stations vides
 6. Taux de remplissage des stations
 7. Pourcentage de stations pleines
-8. Nombre de station dont le nombre de places est supérieur à 35
+8. Nombre de station dont la capacité est supérieure à 35
 9. Rang de station en terme de nombre de places occupées
 10. Moyenne du nombre de vélos par stations
 11. Booléen qui indique s'il y a des vélibs electriques ou non dans la borne.
@@ -34,22 +34,32 @@
         [Nombre de stations]
         , 'Etats'[Total Available Bikes] = 0 
     )
-5. ```
-    DIVIDE(
+6. ```
+    Taux de remplissage des stations = DIVIDE(
       [Nombre de vélos disponibles]
     , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
     )
 
-5. ```
+7. ```
+    Pourcentage de stations pleines = DIVIDE(
+      [Nombre de stations pleines]
+    , [Nombre de stations]
+)
+
+8. ```
+    Nombre de Stations Capacité Elevée = CALCULATE(
+    [Nombre de stations]
+    , Stations[Capacity] > 35
+)
+
+9. ```
     x
 
-5. ```
+10. ```
     x
-
-5. ```
+11. ```
     x
-
-5. ```
+12. ```
     x
 
        
