@@ -89,6 +89,8 @@ Il est important de prendre du recul une fois les étapes appliquées. L'ordre d
 Le but de cet exercice est maintenant d'identifier les étapes qui se répètent, ou celles qui pouvaient être faites au plus tôt, et de les réorganiser. Il est possible de réorganiser les étapes appliquées en Cliquant/Glissant les étapes. Attention : si une étape dépend d'une autre, il faut l'anticiper. 
 - Indice : Les colonnes lastUpdateOrder et ttl auraient pu être retirées dès le départ ... Chercher un moyen de les enlever le plus tôt possible. 
 
+- Il est possible d'organiser les requêtes dans des dossiers : dans la partie _query > New Group > Glisser les requêtes dans les bons groupes_ 
+
 # Paramétrage des requêtes 
 
 Nous allons découvrir l'usage des paramètres pour simplifier l'évolution du tableau en remplaçant l'URL fixe par un paramètre.   
