@@ -19,7 +19,7 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 ## Stations
 1. Supprimer les étapes générées par le moteur Power Query sur la droite en retirant les étapes les unes après les autres 
 2. Convertir le document en tableau exploitable 
-3. Transposer les lignes en colonnes
+3. _Cliquer sur la première colonne > Onglet Transformer > Transposer les lignes en colonnes_
 4. Utiliser la première ligne comme en-tête
 5. Exposer les données de la colonne Data grâce au bouton _Expand_ situé à côté du nom de la colonne. Ne pas conserver le préfixe de la colonne. 
 6. Etendre la liste "stations" en utilisant le même bouton. En consultant le lien des stations (voir partie 1, 1) ), essayez de déterminer si l'exposition doit être faite sur les valeurs ou sur de nouvelles lignes. 
