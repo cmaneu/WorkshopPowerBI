@@ -114,6 +114,29 @@ Une fois les développement effectués, appliquer les développements dans la pa
 L'usage d'une table de date est importante dans un modèle de données Power BI est primordial pour arriver à utiliser l'intelligence Calendaire et les atouts de Power BI. Pour y arriver, il faut créer un référentiel de date. En général, cette requête est à mettre de côté et à réutiliser dans tous les modèles Power BI. Il existe plusieurs façons différentes de la générer, en voici une via Power Query. 
 1. Créer une nouvelle requête vide : _Get Data > New Blank Query_
 2. Dans l'onglet _Home > Advanced Editor_
-3. Coller le contenu du code suivant et cliquer sur appliquer.
-4. En consultant les étapes et/ou le code, ajoutez les colonnes manquantes de la manière que vous préférez (Colonnes à partir d'exemple, Fonctions, Aide via AI/Stack Overflow ...)
+3. Coller le contenu du code suivant et cliquer sur appliquer :
+   ```
+   let
+    StartDate = #date(2020,1,1),
+    EndDate = #date(2025,12,31),
+    Culture = "fr-fr",
+    DayCount = Duration.Days(Duration.From(EndDate - StartDate)) + 1,
+    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),
+    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),    
+    ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type date}}),
+    RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Date"}}),
+    InsertYearKey = Table.AddColumn(RenamedColumns, "YearKey", each Date.Year([Date])),
+    InsertYear = Table.AddColumn(InsertYearKey, "Year", each ("CY" & Number.ToText([YearKey])), type text),
+    InsertQuarterKey = Table.AddColumn(InsertYear, "QuarterKey", each (([YearKey] * 10) + Date.QuarterOfYear([Date]))),
+    InsertQuarter = Table.AddColumn(InsertQuarterKey, "Quarter", each ("FY" & Number.ToText([YearKey]) & "-Q" & Number.ToText(Date.QuarterOfYear([Date]))), type text),
+    InsertMonthKey = Table.AddColumn(InsertQuarter, "MonthKey", each (([YearKey] * 100) + Date.Month([Date]))),
+    InsertMonth = Table.AddColumn(InsertMonthKey, "Month", each (Number.ToText([YearKey]) & " - " & Date.ToText([Date], "MMM", Culture)), type text),
+    InsertDateKey = Table.AddColumn(InsertMonth, "DateKey", each (([YearKey] * 10000) + (Date.Month([Date]) * 100) + Date.Day([Date]))),
+    InsertDay = Table.AddColumn(InsertDateKey, "Day", each Date.ToText([Date], "yyyy-MM-dd", Culture), type text),
+    DateTable = Table.TransformColumnTypes(InsertDay, {{"DateKey", Int64.Type}, {"MonthKey", Int64.Type}, {"QuarterKey", Int64.Type}, {"YearKey", Int64.Type}})
+in
+    DateTable
+
+   ```
+5. En consultant les étapes et/ou le code, ajoutez les colonnes manquantes de la manière que vous préférez (Colonnes à partir d'exemple, Fonctions, Aide via AI/Stack Overflow ...)
  
