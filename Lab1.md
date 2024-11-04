@@ -111,4 +111,9 @@ Une fois les développement effectués, appliquer les développements dans la pa
 
 # Table Date
 
-L'usage d'une table de date est importante dans un modèle 
+L'usage d'une table de date est importante dans un modèle de données Power BI est primordial pour arriver à utiliser l'intelligence Calendaire et les atouts de Power BI. Pour y arriver, il faut créer un référentiel de date. En général, cette requête est à mettre de côté et à réutiliser dans tous les modèles Power BI. Il existe plusieurs façons différentes de la générer, en voici une via Power Query. 
+1. Créer une nouvelle requête vide : _Get Data > New Blank Query_
+2. Dans l'onglet _Home > Advanced Editor_
+3. Coller le contenu du code suivant et cliquer sur appliquer.
+4. En consultant les étapes et/ou le code, ajoutez les colonnes manquantes de la manière que vous préférez (Colonnes à partir d'exemple, Fonctions, Aide via AI/Stack Overflow ...)
+ 
