@@ -38,7 +38,16 @@ Pour importer les données de ces APIs nous allons Récuperer les données via l
 7. Après avoir réfléchis, choisissez sur de nouvelles lignes. 
 8. Exposer le contenu des Lignes : 
   - Retirez le préfixe
-  - Lister l'ensemble des colonnes disponibles 
+  - Lister l'ensemble des colonnes disponibles
+9. Traitement de la colonne _num_bikes_available_types_
+  - Version 1 :
+    - Exposer la colonne via le bouton Expand sur de nouvelles lignes.
+    - On se retrouve avec deux lignes pour chaque station. Nous allons les exposer, puis réduire le résultat à une ligne.
+    - Exposer les _Records_ sur les colonnes mechanical et ebikes
+    - Ajouter une première colonne conditionnelle appelée Available Bike Types : Si colonne mechanical est != _null_ > "mechanical", Sinon "electric"
+    - Ajouter une seconde colonne conditionnelle appelée Available Quantity :  Si colonne mechanical est != _null_ > valeur de la colonne mechanical, sinon valeur de la colonne ebikes. Pour y arriver, changer le logo "ABC/123" en "Select A column"
+    - Supprimer les colonnes _mechanical_ et _ebikes_
+    - Cliquer sur la colonne _Available Bikes Type_ > Onglet Transform > Pivot > Dans la colonne _Values Column_, choisir "Available Quantity"
 
 # Nettoyage des données :
 ## Stations
