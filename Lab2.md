@@ -17,7 +17,8 @@
 8. Nombre de station dont le nombre de places est supérieur à 35
 9. Rang de station en terme de nombre de places occupées
 10. Moyenne du nombre de vélos par stations
-11. Booléen qui indique s'il y a des vélibs electriques ou non dans la borne. 
+11. Booléen qui indique s'il y a des vélibs electriques ou non dans la borne.
+12. Pourcentage de capacité que contient la station pour toutes les capacités disponibles
 
 # Réponses
 1. ```Nombre de stations = COUNTROWS(Stations)```
