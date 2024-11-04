@@ -36,25 +36,23 @@
     )
 6. ```
     Taux de remplissage des stations = DIVIDE(
-      [Nombre de vélos disponibles]
-    , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
+        [Nombre de vélos disponibles]
+        , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
     )
 
 7. ```
     Pourcentage de stations pleines = DIVIDE(
-      [Nombre de stations pleines]
-    , [Nombre de stations]
-)
+        [Nombre de stations pleines]
+        , [Nombre de stations]
+    )
 
 8. ```
     Nombre de Stations Capacité Elevée = CALCULATE(
-    [Nombre de stations]
-    , Stations[Capacity] > 35
-)
+        [Nombre de stations]
+        , Stations[Capacity] > 35
+    )
 
-9. ```
-    x
-
+9. ```Moyenne du nombre de vélos par stations = AVG(Etats[Total Available Bikes])
 10. ```
     x
 11. ```
