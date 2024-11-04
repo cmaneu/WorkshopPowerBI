@@ -12,7 +12,7 @@
 3. Nombre de vélos mécaniques disponibles
 4. Nombre de stations pleines
 5. Nombre de stations vides
-6. Remplissage des station
+6. Taux de remplissage des stations
 7. Pourcentage de stations pleines
 8. Nombre de station dont le nombre de places est supérieur à 35
 9. Rang de station en terme de nombre de places occupées
@@ -28,28 +28,29 @@
         [Nombre de stations]
         , 'Etats'[Total Available Docks] = 0 
     )
-```
 5. ```
     Nombre de stations vides = CALCULATE(
         [Nombre de stations]
         , 'Etats'[Total Available Bikes] = 0 
     )
-```
+5. ```
+    DIVIDE(
+      [Nombre de vélos disponibles]
+    , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
+    )
+
 5. ```
     x
-```
+
 5. ```
     x
-```
+
 5. ```
     x
-```
+
 5. ```
     x
-```
-5. ```
-    x
-```
+
        
 # Scenario What-If
 
