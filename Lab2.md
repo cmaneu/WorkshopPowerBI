@@ -7,12 +7,9 @@
 
 # Créer ses premières mesures 
 
-1. Nombre de stations : 
-
+1. Nombre de stations
 2. Nombre de vélos disponibles
-
 3. Nombre de vélos mécaniques disponibles
-
 4. Nombre de stations pleines
 5. Nombre de stations vides
 6. Remplissage des station
@@ -23,9 +20,11 @@
 11. Booléen qui indique s'il y a des vélibs electriques ou non dans la borne. 
 
 # Réponses
-1. ```Nombre de stations = COUNTROWS(Etats)```
+1. ```Nombre de stations = COUNTROWS(Stations)```
 2. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```
 3. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```
+4. ```x```
+5. ```x```
        
 # Scenario What-If
 
