@@ -11,8 +11,8 @@ Pour importer les données de ces APIs nous allons Récupere les données via le
 2) Coller l'URL dans l'invite 
 3) Répéter l'étape depuis Power Query pour obtenir les deux requêtes côte à côte 
 4) Renommer les deux requêtes en utilisant la partie proriété sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via Click droit > Rename : 
-  a) station_status > Etats
-  b) station_information > Stations
+* station_status > Etats
+* station_information > Stations
 
 # Optionnel : Décortiquer le fichier JSON
 
