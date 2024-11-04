@@ -52,15 +52,15 @@
         , Stations[Capacity] > 35
     )
 
-9. 
-10. ```Moyenne du nombre de vélos par stations = AVG(Etats[Total Available Bikes])```
+9. ``` ```
+10. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```
 11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
-12. ```Pourcentage vs Total = DIVIDE(
+12. ```
+    Pourcentage vs Total = DIVIDE(
         SUM(Stations[Capacity]
         , CALCULATE( SUM(Stations[Capacity]), ALL(Stations) )
-    ) ```
+    )
 
-       
 # Scenario What-If
 
 1. Créer une table avec une liste de valeurs de 0 à 10
