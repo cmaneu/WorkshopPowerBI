@@ -39,23 +39,19 @@
         [Nombre de vélos disponibles]
         , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
     )
-
 7. ```
     Pourcentage de stations pleines = DIVIDE(
         [Nombre de stations pleines]
         , [Nombre de stations]
     )
-
 8. ```
     Nombre de Stations Capacité Elevée = CALCULATE(
         [Nombre de stations]
         , Stations[Capacity] > 35
     )
-
 9. ```
    Capacité Station = MAX(Stations[Capacity])
    Rang Capacité Station = RANKX( ALL( Stations ), [Capacite Station] ,,,DENSE)
-
 10. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```
 11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
 12. ```
