@@ -52,12 +52,13 @@
         , Stations[Capacity] > 35
     )
 
-9. ```Moyenne du nombre de vélos par stations = AVG(Etats[Total Available Bikes])```
-10. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
-11. ```
-    x
-12. ```
-    x
+9. 
+10. ```Moyenne du nombre de vélos par stations = AVG(Etats[Total Available Bikes])```
+11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
+12. ```Pourcentage vs Total = DIVIDE(
+        SUM(Stations[Capacity]
+        , CALCULATE( SUM(Stations[Capacity]), ALL(Stations) )
+    ) ```
 
        
 # Scenario What-If
