@@ -69,4 +69,6 @@
 5. Créer une visel filtre avec comme choix la colonne de la table déconnectée 
 6. Dans une matrice, afficher le nom des stations, le nombre de vélo disponible et cette nouvelle mesure testée à l'étape 4. Jouer avec le filtre pour faire varier la mesure.
 
+# Comprendre les mesures semi-additive (MeasureX)
+
 # Time Intelligence 
