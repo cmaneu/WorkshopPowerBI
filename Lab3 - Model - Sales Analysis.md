@@ -69,11 +69,11 @@ Voici les étapes pour créer une table calculée :
 Créons maintenant une table aggrégée. Pour cela, nous utiliserons la fonction SUMMARIZE(table, colonne d'aggrégat, "nom colonne aggrégée", fonction d'aggrégat) https://learn.microsoft.com/fr-fr/dax/summarize-function-dax
 1. Dans le menu **Modeling**, cliquer sur **New Table**
 2. Utiliser la fonction SUMMARIZE pour aggréger la quantité de produits par Numéro de commandes de la table SalesOrderDetails
-3. Réponse : ```QuantityPerOrders = SUMMARIZE(SalesOrderDetail, SalesOrderDetail[SalesOrderID], "SumQuantity", SUM(SalesOrderDetail[OrderQty]))``
+3. Réponse : ```QuantityPerOrders = SUMMARIZE(SalesOrderDetail, SalesOrderDetail[SalesOrderID], "SumQuantity", SUM(SalesOrderDetail[OrderQty]))```
 
 Les fonctions peuvent être combinées pour retourner des tables aggrégée, mais aussi bien filtrées. 
 1. Créons la même table mais seulement pour les produits rouges
-2. Réponse : ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
+2. Réponse : ```QuantityPerOrdersWithRedProducts = CALCULATETABLE(SUMMARIZE(SalesOrderDetail, SalesOrderDetail[SalesOrderID], "SumQuantity", SUM(SalesOrderDetail[OrderQty])), Product[Color] = "Red" ) ```
 
 Consultons alors le modèle : cette table peut-elle être analysée par date ? 
 
