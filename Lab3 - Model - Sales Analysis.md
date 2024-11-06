@@ -132,7 +132,9 @@ L'utilisation de variables est très important pour des soucis de performances o
         VAR vTest = [VersusLastPeriod]
     RETURN 
         IF(vTest > 0, vTest, BLANK())
-4. xx
+
++ Lab sur les valeurs évaluées avant les autres mesures
++ Lab sur les variables pour nettoyer les résutlats. 
    
 # Utiliser les Calculation Groups
 
