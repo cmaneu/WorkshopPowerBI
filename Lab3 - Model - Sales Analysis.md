@@ -126,12 +126,13 @@ Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fon
 
 L'utilisation de variables est très important pour des soucis de performances ou de lisibilité. Dans le cadre d'un test, Power BI exécutera le test pour le résultat. Dans le cas ou l'on ne veut afficher un résultat que dans un cas ou un autre, l'utilisation d'une variable permet de ne faire le calcul qu'une seule fois plutôt que deux : 
 1. Sans variable : ``` DummyTest = IF([VersusLastPeriod] > 0, [VersusLastPeriod], BLANK())  ```
-2. Avec variable : ```
+2. Avec variable :
+   ```
     DummyTest = 
         VAR vTest = [VersusLastPeriod]
     RETURN 
         IF(vTest > 0, vTest, BLANK())
-3. 
+4. xx
    
 # Utiliser les Calculation Groups
 
