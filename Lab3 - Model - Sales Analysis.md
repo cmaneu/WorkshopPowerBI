@@ -1,4 +1,4 @@
-# Diagramme, Ordre des valeurs et Time Intelligence 
+# Diagramme, Ordre des valeurs et Hiérarchie 
 
 1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la droite. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Pour se faciliter la tâche, il est possible de réorganiser les tables, de les réduire/étendre, ou de créer un second diagramme et d'y ajouter les tables que l'on veut. 
@@ -26,11 +26,9 @@
   - Les champs s'ajoutent dans l'ordre d'ajout à la hiérarchie, et pas nécessairement dans l'ordre voulu fonctionnellement. Il est possible de les réorganiser depuis la vue **Model**, en cliquant sur la héirarchie et en changeant l'ordre dans l'onglet Advanced :
   - ![image](https://github.com/user-attachments/assets/e5d15c89-ebb1-4d49-9bdd-f40496a92647)
 
-
 6. Définir comme table date
   - ![image](https://github.com/user-attachments/assets/afe29050-74a4-43aa-87cb-af69b49267b8)
 
-7. Changer l'ordre d'affichage d'une colonne 
 
 # Utiliser une relation inactive dans un calcul
 
