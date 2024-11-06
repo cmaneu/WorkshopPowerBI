@@ -2,32 +2,37 @@
 
 1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la droite. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Pour se faciliter la tâche, il est possible de réorganiser les tables, de les réduire/étendre, ou de créer un second diagramme et d'y ajouter les tables que l'on veut. 
-  - ![image](https://github.com/user-attachments/assets/80ae3b51-ed7b-4b14-a33e-71b97b9fd8dd)
-  - ![image](https://github.com/user-attachments/assets/b274da68-304d-4df4-929f-d2ddbc086aab)
-  - ![image](https://github.com/user-attachments/assets/a1f493fa-577f-4a0e-8257-187f5fa21e6d)
+    1. ![image](https://github.com/user-attachments/assets/80ae3b51-ed7b-4b14-a33e-71b97b9fd8dd)
+    2. ![image](https://github.com/user-attachments/assets/b274da68-304d-4df4-929f-d2ddbc086aab)
+    3. ![image](https://github.com/user-attachments/assets/a1f493fa-577f-4a0e-8257-187f5fa21e6d)
 
 3. L'ordre des valeurs à l'affichage :
-  - Créons un premier visuel permettant d'afficher la mesure [SalesCount] par Mois.
-  - Utiliser le visuel Table : dans la Vue **Report**, Cliquer sur le fond blanc de la page. Dans la liste des visuels, choisir le visuel Table, puis choisir les champs Date\Month et DAX\SalesCount
-  - ![image](https://github.com/user-attachments/assets/b609f30c-a15d-4969-a9b2-83f1afb9c5ed)
-  - L'ordre d'affichage est fait par l'ordre alpha-numérique : D'abbord la date, puis le mois qui commence par un A, puis par un B, ...
-  - Il est possible de changer l'ordre d'affichage d'un visuel : En clicant sur le visuel, on voit apparaître **...** autour du visuel (en haut ou en bas à droite).
-    - Cliquer sur **...**, puis Sort By > Sales Count.
-    - L'ordre est alors fait par ordre croissant ou décroissant de ventes, mais pas par l'ordre des mois de l'année.
-  - Pour résoudre ce sujet, il est possible de faire appel à une autre colonne, appelée colonne de tri :
-    - Dans la Vue **Data**, choisir la table de date sur la droite.
-    - Cliquer su la colonne Month, et choisir dans l'onglet **Column Tools** _Sort By Column_.
-    - Choisir la colonne MonthKey, qui elle est numérique (et donc donne l'ordre des mois dans leur ordre calendaire plutôt qu'alphabétique).
-    - Attention : cette méthode ne marche que si les deux colonnes ont la même cardinalité ! (même nombre de valeurs distinctes et équivalence des valeurs pour les mêmes lignes)
+    1. Créons un premier visuel permettant d'afficher la mesure [SalesCount] par Mois.
+    2. Utiliser le visuel Table : dans la Vue **Report**, Cliquer sur le fond blanc de la page. Dans la liste des visuels, choisir le visuel Table, puis choisir les champs Date\Month et DAX\SalesCount
+    3. ![image](https://github.com/user-attachments/assets/b609f30c-a15d-4969-a9b2-83f1afb9c5ed)
+    4. L'ordre d'affichage est fait par l'ordre alpha-numérique : D'abbord la date, puis le mois qui commence par un A, puis par un B, ...
+    5. Il est possible de changer l'ordre d'affichage d'un visuel : En clicant sur le visuel, on voit apparaître **...** autour du visuel (en haut ou en bas à droite).
+        1. Cliquer sur **...**, puis Sort By > Sales Count.
+        2. L'ordre est alors fait par ordre croissant ou décroissant de ventes, mais pas par l'ordre des mois de l'année.
+    6. Pour résoudre ce sujet, il est possible de faire appel à une autre colonne, appelée colonne de tri :
+        1. Dans la Vue **Data**, choisir la table de date sur la droite.
+        2. Cliquer su la colonne Month, et choisir dans l'onglet **Column Tools** _Sort By Column_.
+        3. Choisir la colonne MonthKey, qui elle est numérique (et donc donne l'ordre des mois dans leur ordre calendaire plutôt qu'alphabétique).
+        4. Attention : cette méthode ne marche que si les deux colonnes ont la même cardinalité ! (même nombre de valeurs distinctes et équivalence des valeurs pour les mêmes lignes)
 
 5. Il est possible de faciliter le travail des utilisateurs en associant les champs entre eux, lorsqu'ils sont Parents/Enfants (ex : Categories de produits, Dates). Cela s'appelle une hiérarchie.
-  - Pour y arriver, dans nimporte quelle vue, cliquer droit sur un champ, puis en cliquant sur **Create Hierarchy**
-  - Dans la table Date, cliquer droit sur _Year_ puis créer une hiérarchie. Renommer cette hiérarchie en Année/Trimestre/Mois/Jour
-  - Les champs s'ajoutent dans l'ordre d'ajout à la hiérarchie, et pas nécessairement dans l'ordre voulu fonctionnellement. Il est possible de les réorganiser depuis la vue **Model**, en cliquant sur la héirarchie et en changeant l'ordre dans l'onglet Advanced :
-  - ![image](https://github.com/user-attachments/assets/e5d15c89-ebb1-4d49-9bdd-f40496a92647)
+    1. Pour y arriver, dans nimporte quelle vue, cliquer droit sur un champ, puis en cliquant sur **Create Hierarchy**
+    2. Dans la table Date, cliquer droit sur _Year_ puis créer une hiérarchie. Renommer cette hiérarchie en Année/Trimestre/Mois/Jour
+    3. Les champs s'ajoutent dans l'ordre d'ajout à la hiérarchie, et pas nécessairement dans l'ordre voulu fonctionnellement. Il est possible de les réorganiser depuis la vue **Model**, en cliquant sur la héirarchie et en changeant l'ordre dans l'onglet Advanced :
+    4. ![image](https://github.com/user-attachments/assets/e5d15c89-ebb1-4d49-9bdd-f40496a92647)
 
-6. Définir comme table date
-  - ![image](https://github.com/user-attachments/assets/afe29050-74a4-43aa-87cb-af69b49267b8)
+# Time Intelligence
+
+Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fonctionnalité appelée Time Intelligence. Cette fonctionnalité permet l'usage de fonction avancée pour comparer des valeurs dans le temps (par rapport au début de l'année, à l'année précédente ...). Pour cela, le modèle doit avoir une table de date dont les valeurs sont contigues dans le modèle. 
+
+1. Définir une table comme table date
+    1. Pour y arriver, cliquer droit sur la table date, puis sur **Mark as Date Table**. Choisir le champs dont la granularité est la plus fine  
+    2. ![image](https://github.com/user-attachments/assets/afe29050-74a4-43aa-87cb-af69b49267b8)
 
 
 # Utiliser une relation inactive dans un calcul
