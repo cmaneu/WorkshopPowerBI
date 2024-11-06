@@ -59,8 +59,12 @@ L'ordre de préférence pour créer une table calculée est le suivant :
 2. Sinon, si je peux créer cette table via Power Query, je le fais,
 3. Enfin, si je dois la créer en DAX, alors je crée une table calculée.
 
-La table calculée que nous venons de créer pourrait être utilisée directement au sein d'une mesure : Ne calculer la somme des produits vendus que pour les produits rouges :  
-- ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
+Voici les étapes pour créer une table calculée : 
+1. Dans le menu **Modeling**, cliquer sur **New Table**
+2. Créer une mesure permettant de ne filtrer que les SalesOrderDetails qui ont des produits rouges :
+    1. ```RedProducts = CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red") ```
+3. La table calculée que nous venons de créer pourrait être utilisée directement au sein d'une mesure : Ne calculer la somme des produits vendus que pour les produits rouges :  
+    1. ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
 
 # Time Intelligence
 
