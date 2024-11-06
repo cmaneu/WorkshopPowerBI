@@ -54,10 +54,16 @@ Dans certains cas, il est impossible de calculer le résultat d'un calcul sans e
 
 Pour aller plus loin, il est important de comprendre que certaines fonctions retournent des tables (fonction tabulaires), et d'autres retournent des valeurs simples (fonction scalaires). Il est indiqué dans la documentation quel type de contenu une fonction peut retourner. 
 Pour illustrer nos propos, nous allons créer une table calculée : elle diffère des tables issues de Power Query, car elles sont évalues en dernier, une fois que les données ont été importées. Il est important de ne pas avoir pour racourci de toujours créer ces tables en DAX plutôt qu'en Power Query : chaque contexte est différent. 
-L'ordre de préférence pour créer une table calculée est le suivant : 
+L'ordre de préférence pour créer une table calculée ou une colonne calculée est le suivant : 
 1. Si je peux créer cette table à la source, je le fais
 2. Sinon, si je peux créer cette table via Power Query, je le fais,
 3. Enfin, si je dois la créer en DAX, alors je crée une table calculée.
+
+Voici les étapes pour créer une colonne calculée : 
+1. Cliquer sur la table SalesOrderDetail et choisir dans l'onglet **Table Tools**, **New Column**
+2. Dans la barre de formule, calculer le prix total de vente
+3. Réponse : ```TotalAmount = SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty]```
+4. Vous remarquerez la différence de logo d'une colonne classique, d'une mesure, et d'une colonne calculée. 
 
 Voici les étapes pour créer une table calculée : 
 1. Dans le menu **Modeling**, cliquer sur **New Table**
@@ -65,7 +71,8 @@ Voici les étapes pour créer une table calculée :
     1. ```RedProducts = CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red") ```
 3. La table calculée que nous venons de créer pourrait être utilisée directement au sein d'une mesure : Ne calculer la somme des produits vendus que pour les produits rouges :  
     1. ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
-
+4. Idem, les logos des tables calculées, tables de mesures, et tables classique est différent. 
+ 
 Créons maintenant une table aggrégée. Pour cela, nous utiliserons la fonction SUMMARIZE(table, colonne d'aggrégat, "nom colonne aggrégée", fonction d'aggrégat) https://learn.microsoft.com/fr-fr/dax/summarize-function-dax
 1. Dans le menu **Modeling**, cliquer sur **New Table**
 2. Utiliser la fonction SUMMARIZE pour aggréger la quantité de produits par Numéro de commandes de la table SalesOrderDetails
