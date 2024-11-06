@@ -33,11 +33,34 @@ Dans certains cas, il est impossible de calculer le résultat d'un calcul sans e
     1. Syntaxe : ```SUMX(<table>, <expression>)```
     2. La table sera donc **SalesOrderDetail**, et l'expression sera alors [UnitPrice] * [OrderQty]
     3. Réponse : ```TotalSales = SUMX(SalesOrderDetail, SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
-2. Affichons le résultat de cette mesure dans une matrice, ventilée par mois par exemple :      
+2. Affichons le résultat de cette mesure dans une matrice, ventilée par mois par exemple :
+    1. ![image](https://github.com/user-attachments/assets/8665c1c0-fd26-4331-8f2d-d5e4701fffc0)
 
-# Comprendre les mesures qui retournent une table 
+# Utiliser une relation inactive dans un calcul
 
-Pour aller plus loin, il est 
+1. Essayons d'afficher le nombre de ventes par Mois. D'après le diagramme, fonctionnellement, par quel date de la table des ventes la mesure est elle aggrégée ?
+    1. Si l'on veut pouvoir calculer les ventes par "Date de livraison" (ShipDate) plutôt que par "Date d'échéance" (DueDate), deux solutions s'offrent à nous : Essayons de comprendre quels sont les enjeux (filtres, aspect pratique ...) 
+    2. Recréer une autre table de date, et avoir une relation active entre cette nouvelle table et la seconde colonne de la même table : si l'on recrée une autre table de date, il faut alors la maintenir pour supporter les mêmes informations, et faire comprendre qu'il y en a deux avec des rôles différents.
+    3. Forcer l'usage de la relation lors des calculs
+2. Une fonction appelée USERELATIONSHIP permet de forcer l'usage d'une relation (seulement si elle est inactive) dans le cas d'un calcul : https://learn.microsoft.com/fr-fr/dax/userelationship-function-dax
+3. Pour l'utiliser, créer une deuxième mesure _TotalSalesShipDate_ en utilisant la fonction USERLATIONSHIP.
+4. Réponse : ```TotalSalesShipDate = CALCULATE([TotalSales], USERELATIONSHIP('Date'[Date] , SalesOrderHeader[ShipDate] ))```
+5. Répeter la logique pour _OrderDate_ :
+6. Le résultat peut-être affiché sur la même Matrice, et le contexte diffère pour chaque mesure :
+7. ![image](https://github.com/user-attachments/assets/333dd35d-e37e-401a-8738-402722210a62)
+
+
+# Comprendre les mesures qui retournent une valeur ou une table 
+
+Pour aller plus loin, il est important de comprendre que certaines fonctions retournent des tables (fonction tabulaires), et d'autres retournent des valeurs simples (fonction scalaires). Il est indiqué dans la documentation quel type de contenu une fonction peut retourner. 
+Pour illustrer nos propos, nous allons créer une table calculée : elle diffère des tables issues de Power Query, car elles sont évalues en dernier, une fois que les données ont été importées. Il est important de ne pas avoir pour racourci de toujours créer ces tables en DAX plutôt qu'en Power Query : chaque contexte est différent. 
+L'ordre de préférence pour créer une table calculée est le suivant : 
+1. Si je peux créer cette table à la source, je le fais
+2. Sinon, si je peux créer cette table via Power Query, je le fais,
+3. Enfin, si je dois la créer en DAX, alors je crée une table calculée.
+
+La table calculée que nous venons de créer pourrait être utilisée directement au sein d'une mesure : Ne calculer la somme des produits vendus que pour les produits rouges :  
+- ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
 
 # Time Intelligence
 
@@ -61,15 +84,7 @@ Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fon
         1. Il est possible de le faire en créant une seconde mesure qui calcule le nombre de ventes à l'année N-1, puis en soustrayant cette valeur dans une autre mesure.
         2. Cette fois-ci, il faut utiliser une mesure qui permet de renvoyer une table. 
 
-# Utiliser une relation inactive dans un calcul
 
-1. Essayons d'afficher le nombre de ventes par Mois. D'après le diagramme, fonctionnellement, par quel date de la table des ventes la mesure est elle aggrégée ?
-  - Si l'on veut pouvoir calculer les ventes par "Date de livraison" (ShipDate) plutôt que par "Date d'échéance" (DueDate), deux solutions s'offrent à nous : Essayons de comprendre quels sont les enjeux (filtres, aspect pratique ...) 
-    - Recréer une autre table de date, et avoir une relation active entre cette nouvelle table et la seconde colonne de la même table
-    - Forcer l'usage de la relation lors des calculs
-  - Si l'on recrée une autre table de date, il faut alors la maintenir pour supporter les mêmes informations, faire comprendre qu'il y en a deux avec des rôles différents, et enfin 
-  - Une fonction appelée USERELATIONSHIP permet de forcer l'usage d'une relation (seulement si elle est inactive) dans le cas d'un calcul : https://learn.microsoft.com/fr-fr/dax/userelationship-function-dax
-  - 
 
 # Quelques mesures très utiles 
 
