@@ -28,6 +28,7 @@
     Nombre de stations pleines = CALCULATE(
         [Nombre de stations]
         , 'Etats'[Total Available Docks] = 0 
+        , 'Etats'[Total Available Bikes] <> 0 
     )
 5. ```
     Nombre de stations vides = CALCULATE(
@@ -37,7 +38,7 @@
 6. ```
     Taux de remplissage des stations = DIVIDE(
         [Nombre de vélos disponibles]
-        , [Nombre de vélos disponibles] + SUM('Etats'[Total Available Docks])
+        , MAX(Stations[Capacity])
     )
 7. ```
     Pourcentage de stations pleines = DIVIDE(
