@@ -60,7 +60,7 @@
 11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
 12. ```
     Pourcentage vs Total = DIVIDE(
-        SUM(Stations[Capacity]
+        SUM(Stations[Capacity])
         , CALCULATE( SUM(Stations[Capacity]), ALL(Stations) )
     )
 
