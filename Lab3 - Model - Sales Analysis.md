@@ -120,16 +120,19 @@ Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fon
          ![image](https://github.com/user-attachments/assets/f9f9657b-9242-435b-be49-d73664c91355)
 
         6. Maintenant, il ne nous reste plus qu'à soustraire l'une et l'autre, et l'on saura s'il on a été plus ou moins performant vis à vis de cette période :
-            1.  ``` VersusLastYear = [SalesCount] - [SalesCountLastPeriod]
+            1.  ``` VersusLastPeriod = [SalesCount] - [SalesCountLastPeriod]
 
 # Les variables 
 
 L'utilisation de variables est très important pour des soucis de performances ou de lisibilité. Dans le cadre d'un test, Power BI exécutera le test pour le résultat. Dans le cas ou l'on ne veut afficher un résultat que dans un cas ou un autre, l'utilisation d'une variable permet de ne faire le calcul qu'une seule fois plutôt que deux : 
-
-```IF(MAX( ```
-
-# Quelques mesures très utiles 
-
+1. Sans variable : ``` DummyTest = IF([VersusLastPeriod] > 0, [VersusLastPeriod], BLANK())  ```
+2. Avec variable : ```
+    DummyTest = 
+        VAR vTest = [VersusLastPeriod]
+    RETURN 
+        IF(vTest > 0, vTest, BLANK())
+3. 
+   
 # Utiliser les Calculation Groups
 
 # RLS 
