@@ -103,16 +103,30 @@ Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fon
     2. Créer une nouvelle mesure permettant de calculer le nombre de ventes totale depuis le début de l'année, et l'afficher dans le diagramme
         1. Utiliser la fonction Calculate pour changer la manière dont la mesure est filtrée, et la fonction DATESYTD qui permet de retourner l'ensemble des dates depuis le début de l'année 
         2. ``` 
-            CALCULATE(
+            SalesCountYearToDate = CALCULATE(
                 [SalesCount]
                 , DATESYTD('Date'[Date])
             )
         3. Cette mesure existe en Month To Date _DATESMTD()_, Quarter To Date _DATESQTD()_, Fiscal Year to date _TOTALYTD()_ avec une définition de la date de départ ...
     3. Maintenant que l'on a compris que la Time Intelligence facilitait le travail via des fonctions déjà intégrées, réflichir à un moyen de calculer la différence des ventes vis à vis de l'année précédente.
         1. Il est possible de le faire en créant une seconde mesure qui calcule le nombre de ventes à l'année N-1, puis en soustrayant cette valeur dans une autre mesure.
-        2. Cette fois-ci, il faut utiliser une mesure qui permet de renvoyer une table. 
+        2. Cette fois-ci, il faut utiliser une mesure qui permet de renvoyer une table. cette table contient les dates de la même période à l'année N-1 pour évalue la même mesure. Cette fonction est la fonction **SAMEPERIODLASTYEAR(Date)**.
+        3.  ``` 
+            SalesCountLastPeriod = CALCULATE(
+                [SalesCount]
+                , SAMEPERIODLASTYEAR('Date'[Date])
+            )
+        4. Affichons cette mesure dans une table, à côté de la mesure [SalesCount] : on retrouve les valeurs de décembre 2022 à côté de celles de 2023
+         ![image](https://github.com/user-attachments/assets/f9f9657b-9242-435b-be49-d73664c91355)
 
+        6. Maintenant, il ne nous reste plus qu'à soustraire l'une et l'autre, et l'on saura s'il on a été plus ou moins performant vis à vis de cette période :
+            1.  ``` VersusLastYear = [SalesCount] - [SalesCountLastPeriod]
 
+# Les variables 
+
+L'utilisation de variables est très important pour des soucis de performances ou de lisibilité. Dans le cadre d'un test, Power BI exécutera le test pour le résultat. Dans le cas ou l'on ne veut afficher un résultat que dans un cas ou un autre, l'utilisation d'une variable permet de ne faire le calcul qu'une seule fois plutôt que deux : 
+
+```IF(MAX( ```
 
 # Quelques mesures très utiles 
 
