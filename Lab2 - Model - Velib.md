@@ -59,3 +59,12 @@
         SUM(Stations[Capacity]
         , CALCULATE( SUM(Stations[Capacity]), ALL(Stations) )
     )
+
+# Scenario What-If
+
+1. Créer une table avec une liste de valeurs de 0 à 10
+2. Cette table sans relation est dite "déconnectée". 
+3. Créer une mesure ScenarioDisponibilite qui récupère la valeur selectionnée par l'utilisateur
+4. Créer une mesure qui soustrait au nombre de vélo disponible la mesure ScenarioDisponibilite
+5. Créer une visel filtre avec comme choix la colonne de la table déconnectée 
+6. Dans une matrice, afficher le nom des stations, le nombre de vélo disponible et cette nouvelle mesure testée à l'étape 4. Jouer avec le filtre pour faire varier la mesure.
