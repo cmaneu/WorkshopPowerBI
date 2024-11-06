@@ -28,11 +28,12 @@
 # Comprendre les mesures "ligne à ligne" (MeasureX)
 
 Dans certains cas, il est impossible de calculer le résultat d'un calcul sans effectuer ce calcul ligne par lignes. Prenons l'exemple de la table **SalesOrderDetail** qui donne le détail de chaque factures avec le prix des produits et la quantité commandée. Pour obtenir le chiffre d'affaire total, il faut multiplier la quantité par le prix du produit vendu. Si l'on somme l'ensemble des produits commandés et que l'on multiplie par la somme des prix, le résultat ne sera pas bon : chaque produit a un prix différent, et la quantité doit être appliquée à la ligne. Pour y arriver, il existe des mesures qui calcule un résultat par ligne. Attention, elles consomment plus de ressources que leur équivalent sans X. 
-    1. Pour calculer le total, on va donc utiliser la mesure SUMX : 
-        1. ```Syntaxe : SUMX(<table>, <expression>)```
-        2. La table sera donc **SalesOrderDetail**, et l'expression sera alors [UnitPrice] * [OrderQty]
-        3. Réponse : ```TotalSales = SUMX(SalesOrderDetail, SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
-    2. Affichons le résultat de cette mesure dans une matrice, ventilée par mois par exemple :      
+
+1. Pour calculer le total, on va donc utiliser la mesure SUMX : 
+    1. Syntaxe : ```SUMX(<table>, <expression>)```
+    2. La table sera donc **SalesOrderDetail**, et l'expression sera alors [UnitPrice] * [OrderQty]
+    3. Réponse : ```TotalSales = SUMX(SalesOrderDetail, SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
+2. Affichons le résultat de cette mesure dans une matrice, ventilée par mois par exemple :      
 
 # Comprendre les mesures qui retournent une table 
 
