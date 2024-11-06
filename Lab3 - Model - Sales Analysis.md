@@ -66,6 +66,17 @@ Voici les étapes pour créer une table calculée :
 3. La table calculée que nous venons de créer pourrait être utilisée directement au sein d'une mesure : Ne calculer la somme des produits vendus que pour les produits rouges :  
     1. ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
 
+Créons maintenant une table aggrégée. Pour cela, nous utiliserons la fonction SUMMARIZE(table, colonne d'aggrégat, "nom colonne aggrégée", fonction d'aggrégat) https://learn.microsoft.com/fr-fr/dax/summarize-function-dax
+1. Dans le menu **Modeling**, cliquer sur **New Table**
+2. Utiliser la fonction SUMMARIZE pour aggréger la quantité de produits par Numéro de commandes de la table SalesOrderDetails
+3. Réponse : ```QuantityPerOrders = SUMMARIZE(SalesOrderDetail, SalesOrderDetail[SalesOrderID], "SumQuantity", SUM(SalesOrderDetail[OrderQty]))``
+
+Les fonctions peuvent être combinées pour retourner des tables aggrégée, mais aussi bien filtrées. 
+1. Créons la même table mais seulement pour les produits rouges
+2. Réponse : ```TotalSalesRedProducts = SUMX(CALCULATETABLE(SalesOrderDetail, Product[Color] = "Red"), SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty])```
+
+Consultons alors le modèle : cette table peut-elle être analysée par date ? 
+
 # Time Intelligence
 
 Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fonctionnalité appelée Time Intelligence. Cette fonctionnalité permet l'usage de fonction avancée pour comparer des valeurs dans le temps (par rapport au début de l'année, à l'année précédente ...). Pour cela, le modèle doit avoir une table de date dont les valeurs sont contigues dans le modèle. 
