@@ -13,6 +13,7 @@
 4. Nombre de stations pleines
 5. Nombre de stations vides
 6. Taux de remplissage des stations
+  - Pour effectuer une division, favoriser l'usage de la fonction DIVIDE( A, B), plutôt que "/" qui ne gère pas la division par zéro et qui peut générer des latences (CallBack)
   - Pour afficher le taux sous forme de %, cliquer sur la mesure et dans l'onglet Measure Tools, cliquer sur "%"
   - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)
 7. Pourcentage de stations pleines
