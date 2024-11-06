@@ -31,9 +31,18 @@
 Pour permettre à Power BI de gagner en magie, il est possible d'activer uen fonctionnalité appelée Time Intelligence. Cette fonctionnalité permet l'usage de fonction avancée pour comparer des valeurs dans le temps (par rapport au début de l'année, à l'année précédente ...). Pour cela, le modèle doit avoir une table de date dont les valeurs sont contigues dans le modèle. 
 
 1. Définir une table comme table date
-    1. Pour y arriver, cliquer droit sur la table date, puis sur **Mark as Date Table**. Choisir le champs dont la granularité est la plus fine  
+    1. Pour y arriver, cliquer droit sur la table date, puis sur **Mark as Date Table**. Choisir le champs dont la granularité est la plus fine (ici _Date_)
     2. ![image](https://github.com/user-attachments/assets/afe29050-74a4-43aa-87cb-af69b49267b8)
 
+2. Essayer les mesures de **Time Intelligence**.
+    1. Créer un visuel Matrice, avec en lignes les **années** et les **mois** (champs ou composant de la hiérarchie) et en colonnes la mesure **[SalesCount]**
+    2. Créer une nouvelle mesure permettant de calculer le nombre de ventes totale depuis le début de l'année, et l'afficher dans le diagramme
+        1. Utiliser la fonction Calculate pour changer la manière dont la mesure est filtrée, et la fonction DATESYTD qui permet de retourner l'ensemble des dates depuis le début de l'année 
+        2. ``` CALCULATE(
+                [SalesCount]
+                , DATESYTD('Date'[Date])
+            )
+    3. Maintenant que l'on a compris que la Time Intelligence facilitait le travail via des fonctions déjà intégrées, réflichir à un moyen de calculer la différence des ventes vis à vis de l'année précédente. 
 
 # Utiliser une relation inactive dans un calcul
 
