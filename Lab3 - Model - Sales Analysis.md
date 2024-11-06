@@ -63,7 +63,9 @@ Voici les étapes pour créer une colonne calculée :
 1. Cliquer sur la table SalesOrderDetail et choisir dans l'onglet **Table Tools**, **New Column**
 2. Dans la barre de formule, calculer le prix total de vente
 3. Réponse : ```TotalAmount = SalesOrderDetail[UnitPrice] * SalesOrderDetail[OrderQty]```
-4. Vous remarquerez la différence de logo d'une colonne classique, d'une mesure, et d'une colonne calculée. 
+4. Vous remarquerez la différence de logo d'une colonne classique, d'une mesure, et d'une colonne calculée.
+5. Essayez maintenant de créer la colonne calculée suivante ```TotalSumQuantity = SUM(SalesOrderDetail[OrderQty])```
+6. Réflechissez à la différence entre une colonne calculée et une mesure : est-ce pertinent de représenter en dur la valeur concernant la somme totale des quantités pour toutes les lignes du tableau ?
 
 Voici les étapes pour créer une table calculée : 
 1. Dans le menu **Modeling**, cliquer sur **New Table**
