@@ -1,13 +1,15 @@
 # Découverte du service
-1. Se connecter au service  
-2. Les types d'espace de travail 
-3. Créer un espace de travail de collaboration 
-4. Publier son modèle de données
-5. Mettre en place un rafraîchissement automatique
+1. Se connecter au service depuis un navigateur
+2. Relier Power BI Desktop à son environnement en ligne 
+3. Les types d'espace de travail 
+4. Créer un espace de travail de collaboration 
+5. Publier son modèle de données
+6. Découvrir les composants déployés par un _.pbix_
+7. Mettre en place un rafraîchissement automatique
 
 # Partager du contenu 
 
-# Comprendre les rôles des espaces de travail 
+# Comprendre les rôles au sein des espaces de travail 
 
 # Utiliser une App 
 
@@ -15,7 +17,7 @@
 
 # Gérer les accès aux ressources 
 
-# Utiliser un modèle existant 
+# Utiliser un modèle existant de données existant
 
 # Découvrir le développement en ligne 
 
