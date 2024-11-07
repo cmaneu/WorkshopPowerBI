@@ -22,3 +22,7 @@
 # Découvrir le développement en ligne 
 
 # Se connecter à des données dans un environnement Privé ou Locales, On Premises 
+
+# Comprendre la consommation des ressources dans le service Power BI 
+
+# Utiliser Copilot pour avancer 
