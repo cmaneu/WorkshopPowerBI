@@ -127,7 +127,7 @@ L'usage d'une table de date est importante dans un modèle de données Power BI 
      TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),    
      ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type date}}),
      RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Date"}}),
-     InsertYear = Table.AddColumn(RenamedColumns, "Year", each Date.Year([Date])), type number),
+     InsertYear = Table.AddColumn(RenamedColumns, "Year", each Date.Year([Date]), type number),
      InsertQuarterKey = Table.AddColumn(InsertYear, "QuarterKey", each (([Year] * 10) + Date.QuarterOfYear([Date]))),
      InsertQuarter = Table.AddColumn(InsertQuarterKey, "Quarter", each ("FY" & Number.ToText([Year]) & "-Q" & Number.ToText(Date.QuarterOfYear([Date]))), type text),
      InsertMonthKey = Table.AddColumn(InsertQuarter, "MonthKey", each (([Year] * 100) + Date.Month([Date]))),
