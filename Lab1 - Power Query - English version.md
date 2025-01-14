@@ -1,6 +1,4 @@
-Certainly! Here's the translation with the original formatting, including `#` and `_`:
 
----
 
 In this Lab, we will import data from the Vélib APIs.
 
