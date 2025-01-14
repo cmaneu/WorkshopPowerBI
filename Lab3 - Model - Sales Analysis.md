@@ -1,6 +1,6 @@
 # Relations entre les tables 
 
-Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysis No Relationships.pbix)
+Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysisNoRelationships.pbix)
 
 1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la gauche. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Nous allons partir de cet état : 
@@ -9,6 +9,8 @@ Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà r
     Pour arriver dans cet état : 
     ![image](https://github.com/user-attachments/assets/8ccf13c7-3e29-4dcf-891b-d67bce2d4c33)
 
+    Pour y arriver, nous allons nous approprier les données des différentes tables de notre lab. Ce modèle représente les ventes de différents magazins. Fonctionnellement, ces ventes sont organisées par factures, et découpées en deux parties : Les en-têtes de factures, qui comprennent les informations générales de la vente (le client, le fournisseur, la date de livraison, de facturation ...) et le détail qui contient chaque produit vendu, son prix de vente, sa quantité ...
+   L'analyste qui a produit ces transformations a tenté de respecter un modèle normalisé, que l'on peut schématiser au mieux par la forme d'une étoile ou d'un flocon de neige. Cette architecture respecte les règles des modèles data warehouse : [Kimball Modeling](https://en.wikipedia.org/wiki/Dimensional_modeling).  
 
 # Diagramme, Ordre des valeurs et Hiérarchie 
 
