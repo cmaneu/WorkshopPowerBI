@@ -1,7 +1,3 @@
-Here's the translated text with the original formatting preserved:
-
----
-
 # Create a Measure Table  
 
 1. From the portal, add a table: _Home > Enter Data_  
