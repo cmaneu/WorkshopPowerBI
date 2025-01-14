@@ -44,7 +44,7 @@
 6. ```  
    Taux de remplissage des stations = DIVIDE(  
        [Nombre de vélos disponibles],  
-       MAX(Stations[Capacity])  
+       SUM(Stations[Capacity])  
    )  
    ```  
 7. ```  
