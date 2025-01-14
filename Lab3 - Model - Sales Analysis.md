@@ -2,11 +2,19 @@
 
 Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysis No Relationships.pbix)
 
+1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la gauche. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
+2. Nous allons partir de cet état : 
+    ![image](https://github.com/user-attachments/assets/7ef04b64-aaf3-4684-ba8d-a3ab12fbf300)
+
+    Pour arriver dans cet état : 
+    ![image](https://github.com/user-attachments/assets/8ccf13c7-3e29-4dcf-891b-d67bce2d4c33)
+
+
 # Diagramme, Ordre des valeurs et Hiérarchie 
 
 Pour continuer sur ce lab, si la partie précédente n'a pas été facile, vous pouvez repartir du modèle qui a déjà été développé appelé [WorkshopSalesAnalysis.pbix](WorkshopSalesAnalysis.pbix) disponible à la racine du Git. 
 
-1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la droite. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
+1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la gauche. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Pour se faciliter la tâche, il est possible de réorganiser les tables, de les réduire/étendre, ou de créer un second diagramme et d'y ajouter les tables que l'on veut. 
     1. ![image](https://github.com/user-attachments/assets/80ae3b51-ed7b-4b14-a33e-71b97b9fd8dd)
     2. ![image](https://github.com/user-attachments/assets/b274da68-304d-4df4-929f-d2ddbc086aab)
