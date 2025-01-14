@@ -24,9 +24,9 @@ Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà r
 
 Chaque relation a un sens, qui représente le sens dans lequel un filtre va se propager lors de l'analyse. 
 
-    - Le sens des relations peut être dans deux états : 
-          - uni-directionnel : dans ce cas, elle sera _toujours_ dans le sens 1 vers *. Les clients filtrent les montants et non l'inverse. une flèche représente ce double sens. 
-          - bi-directionnel : ici, la flèche sera double et les filtres pourront se propager dans les deux se
+Le sens des relations peut être dans deux états : 
+    - uni-directionnel : dans ce cas, elle sera _toujours_ dans le sens 1 vers *. Les clients filtrent les montants et non l'inverse. une flèche représente ce double sens. 
+    - bi-directionnel : ici, la flèche sera double et les filtres pourront se propager dans les deux se
 
 Enfin, chaque relation peut-être dans un état actif ou inactif. Entre une table et une autre, il ne peut y avoir qu'une seule relation active (qu'elle soit directe, ou indirecte via une autre table. Il ne peut y avoir qu'un seul chemin possible entre une table et une autre, autrement le moteur ne peut savoir lequel prendre). 
     - S'il est actif, alors c'est la relation par défaut et elle sera utilisée sauf mesure particulière. 
