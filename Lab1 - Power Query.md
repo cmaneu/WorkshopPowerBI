@@ -7,7 +7,7 @@ Deux URLs seront utilisées pour accéder à ces données :
 2. https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json
 
 Pour importer les données de ces APIs nous allons Récuperer les données via le Connecteur Web : 
-1. _Get Data > More ... > Web > Connect _
+1. _Get Data > More ... > Web > Connect_
 2. Coller l'URL dans l'invite 
 3. Répéter l'étape depuis Power Query pour obtenir les deux requêtes côte à côte 
 4. Renommer les deux requêtes en utilisant la partie propriétés sur la droite OU en cliquant sur le nom de la Query et utilisant "F2", ou via _Click droit > Rename_ :
