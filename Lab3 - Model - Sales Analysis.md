@@ -1,10 +1,10 @@
 # Relations entre les tables 
 
-Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. 
+Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysis No Relationships.pbix)
 
 # Diagramme, Ordre des valeurs et Hiérarchie 
 
-Pour continuer sur ce lab, si la partie précédente n'a pas été facile, vous pouvez repartir du modèle qui a déjà été développé appelé ![link](https://github.com/VincentGvr/WorkshopPowerBI/blob/main/WorkshopSalesAnalysis.pbix)
+Pour continuer sur ce lab, si la partie précédente n'a pas été facile, vous pouvez repartir du modèle qui a déjà été développé appelé [a relative link](WorkshopSalesAnalysis.pbix)
 
 1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la droite. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Pour se faciliter la tâche, il est possible de réorganiser les tables, de les réduire/étendre, ou de créer un second diagramme et d'y ajouter les tables que l'on veut. 
