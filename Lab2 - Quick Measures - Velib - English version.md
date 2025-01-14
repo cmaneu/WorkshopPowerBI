@@ -25,7 +25,7 @@
 
 # Answers  
 
-1. ```Nombre de stations = COUNTROWS(Stations)```  
+1. ```Nombre de stations = DISTINCTCOUNT(Etats[Station Code])```  
 2. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```  
 3. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```  
 4. ```  
