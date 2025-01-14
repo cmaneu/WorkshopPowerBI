@@ -81,7 +81,3 @@
 4. Create a measure that subtracts the `ScenarioDisponibilite` value from the number of available bikes.  
 5. Create a slicer with the column from the disconnected table as the choice.  
 6. In a matrix, display the station names, the number of available bikes, and the new measure created in step 4. Play with the slicer to test the measure.  
-
---- 
-
-Let me know if you'd like any refinements!
