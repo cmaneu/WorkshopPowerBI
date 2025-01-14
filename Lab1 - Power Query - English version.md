@@ -135,8 +135,6 @@ Using a date table is essential in a Power BI data model to leverage calendar in
      InsertQuarterKey = Table.AddColumn(InsertYear, "QuarterKey", each (([Year] * 10) + Date.QuarterOfYear([Date]))),  
      InsertQuarter = Table.AddColumn(InsertQuarterKey, "Quarter", each ("FY" & Number.ToText([Year]) & "-Q" & Number.ToText(Date.QuarterOfYear([Date]))), type text),  
      InsertMonthKey = Table.AddColumn(InsertQuarter, "MonthKey", each (([Year] * 100) + Date.Month([Date]))),  
-     InsertMonth = Table
-
-.AddColumn(InsertMonthKey, "Month", each (Number.ToText([Year]) & " - " & Date.ToText([Date], "MMM", Culture)), type text),  
+     InsertMonth = Table.AddColumn(InsertMonthKey, "Month", each (Number.ToText([Year]) & " - " & Date.ToText([Date], "MMM", Culture)), type text),  
      InsertDateKey = Table.AddColumn(InsertMonth, "DateKey", each (([Year] * 10000) + (Date.Month([Date])  
    ```
