@@ -1,6 +1,6 @@
 # Relations entre les tables 
 
-Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysisNoRelationships.pbix)
+Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà réalisée. Nous allons adresser la partie modélisation uniquement. Commençons par télécharger le fichier [a relative link](WorkshopSalesAnalysisNoRelationships.pbix). C'est une partie fondamentale de Power BI, mais si cela est trop complèxe à ce moment du workshop, il est possible de passer directement à l'étape suivante.
 
 1. Pour s'approprier le modèle de données, il convient de regarder dans un premier temps le volet **Model**, sur la gauche. On peut alors comprendre les relations entre les tables et les impacts des filtres ou des mesures à venir.
 2. Nous allons partir de cet état : 
@@ -9,8 +9,43 @@ Pour ce lab, nous allons utiliser un modèle dont la transformation est déjà r
     Pour arriver dans cet état : 
     ![image](https://github.com/user-attachments/assets/8ccf13c7-3e29-4dcf-891b-d67bce2d4c33)
 
-    Pour y arriver, nous allons nous approprier les données des différentes tables de notre lab. Ce modèle représente les ventes de différents magazins. Fonctionnellement, ces ventes sont organisées par factures, et découpées en deux parties : Les en-têtes de factures, qui comprennent les informations générales de la vente (le client, le fournisseur, la date de livraison, de facturation ...) et le détail qui contient chaque produit vendu, son prix de vente, sa quantité ...
-   L'analyste qui a produit ces transformations a tenté de respecter un modèle normalisé, que l'on peut schématiser au mieux par la forme d'une étoile ou d'un flocon de neige. Cette architecture respecte les règles des modèles data warehouse : [Kimball Modeling](https://en.wikipedia.org/wiki/Dimensional_modeling).  
+    Pour y arriver, nous allons nous approprier les données des différentes tables de notre lab. Ce modèle décrit un service commercial, autrement appelé "retail BI". Fonctionnellement, ces ventes sont organisées par factures, et découpées en deux parties : Les en-têtes de factures, qui comprennent les informations générales de la vente (le client, le fournisseur, la date de livraison, de facturation ...) et le détail qui contient chaque produit vendu, son prix de vente, sa quantité ... Chacune de ces informations est reliée à une table de détail contenant les informations détaillées liées à chaque facture et ligne de facture. 
+   L'analyste qui a produit ces transformations a tenté de respecter un modèle normalisé, que l'on peut schématiser au mieux par la forme d'une étoile ou d'un flocon de neige. Cette architecture respecte les règles des modèles data warehouse : [Kimball Modeling](https://en.wikipedia.org/wiki/Dimensional_modeling).
+   L'enjeu est de comprendre fonctionnellement le modèle pour le schématiser au sein de l'outil. Pour y arriver, nous allons associer les tables, jusqu'ici "déconnectées" les unes des autres, en créant des** relations**.
+   Pour les comprendre, il existe un volet **Data**, qui doit être explorée pour déterminer le type de relations à appliquer. Chaque modèle est différent et doit faire l'objet d'une reflexion particulière.  
+
+   Ces relations peuvent être de **trois types** :
+   - 1 à 1 (1.1) : Pour chaque élément d'une table A, il n'exsite qu'une seule ligne dans la table B qui la concerne. 
+   - 1 à plusieurs (1.*) : Pour chaque élément d'une table A, il peut exister plusieurs lignes dans la table B qui la concerne. En revanche, pour une ligne de la table B, il n'y a qu'une seule valeur dans la table A qui corresponde. 
+   - plusieurs à plusieurs (*.*) : Pour chaque valeur de la table A, il peut exister plusieurs lignes dans la table B, et réciproquement. Ce cas est le plus complèxe à analyser, car la sommes des valeurs des éléments ne fait pas nécessairement la somme finale. Ces relations sont à éviter au maximum pour des raisons de compléxité des modèles et des raisons de performances. Elles sont généralements dues (si le cas fonctionnel n'est pas vrai aux valeurs nulles qui existent de part et d'autres. Pour cela il faut les retirer du côté du référenciel. 
+
+4. Etudions par exemple la table SalesOrderHeader et la table Customer : Combien de factures peuvent concerner un client ? Combien de clients sont concernés par une facture ? En répondant à ces deux questions, il est possible de déterminer la relation entre ces deux tables.
+5. Un client peut commander plusieurs fois au près du magazins, et le magazin peut adresser plusieurs clients. En revanche, dans le cas spécifique d'une facture, elle n'est adressée qu'à un seul client. La relation est alors Customer (1..*) SalesOrderHeader.
+
+Chaque relation a un sens, qui représente le sens dans lequel un filtre va se propager lors de l'analyse. 
+
+    - Le sens des relations peut être dans deux états : 
+          - uni-directionnel : dans ce cas, elle sera _toujours_ dans le sens 1 vers *. Les clients filtrent les montants et non l'inverse. une flèche représente ce double sens. 
+          - bi-directionnel : ici, la flèche sera double et les filtres pourront se propager dans les deux se
+
+Enfin, chaque relation peut-être dans un état actif ou inactif. Entre une table et une autre, il ne peut y avoir qu'une seule relation active (qu'elle soit directe, ou indirecte via une autre table. Il ne peut y avoir qu'un seul chemin possible entre une table et une autre, autrement le moteur ne peut savoir lequel prendre). 
+    - S'il est actif, alors c'est la relation par défaut et elle sera utilisée sauf mesure particulière. 
+    - Si elle est inactive, elle peut être activée via une mesure (mais doit exister pour être utilisée). 
+
+5. Créons alors les relations suivantes (en se posant à chaque fois la question concernant le sens fonctionnel des deux entités représentées) :
+    1. SalesOrderHeader & SalesOrderDetails
+    2. SalesOrderHeader & Adress
+    3. SalesOrderDetails & Product
+    4. Product & ProductModel
+    5. Customer & CustomerAddress
+    7. Address &  CustomerAddress
+    8. Date & SalesOrderHeader : Analysons maintenant le nombre de champs Date dans la table SalesOrderHeader. Une seule relation active peut exister entre une table et une autre. Il faut donc choisir celle qui sera présente par défaut, et qui représentera fonctionnellement notre cas d'usage : lorsque l'on va aggréger les données par date, veut-on représenter les ventes au moment de leur facturation ? de leur date d'envoi ? Dans notre cas fictif, c'est arbitraire, mais dans un cas réel, cela dépend d'un choix fonctionnel.
+        1. Créons alors la première relation active entre le champs date de la table Date et un des champs Date de la table SalesOrderHeader.
+        2. Créons maintenant pour tous les champs Date restant de la table SalesOrderHeader la relation avec la table Date, de manière déconnectée.
+      
+6. La table DAX est une table particulière qui ne sert qu'à organiser les mesures à part des tables. Elle n'est pas à relier à une autre table. 
+
+Vous pouvez vous appuyer sur l'image des relations pour atteindre le résultat attendu. 
 
 # Diagramme, Ordre des valeurs et Hiérarchie 
 
