@@ -17,56 +17,56 @@
    - To display the rate as a percentage, click on the measure and, in the _Measure Tools_ tab, click "%".  
    - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)  
 7. Percentage of full stations  
-8. Number of stations with a capacity greater than 35  
-9. Station rank in terms of capacity  
-10. Average number of bikes per station  
+8. Number of stations with large capacity (more than 35)
+9. Station capacity rank
+10. Average bikes per station
 11. Boolean indicating whether electric bikes are available at the station  
 12. Percentage of the station's capacity compared to the total available capacity  
 
 # Answers  
 
-1. ```Nombre de stations = DISTINCTCOUNT(Etats[Station Code])```  
-2. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```  
-3. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```  
+1. ```Number of stations = DISTINCTCOUNT(Etats[Station Code])```  
+2. ```Number of available bikes = SUM(Etats[Total Available Bikes])```  
+3. ```Number of available mechanical bikes = SUM(Etats[Mechanical Bikes Available])```  
 4. ```  
-   Nombre de stations pleines = CALCULATE(  
-       [Nombre de stations],  
+   Number of full stations = CALCULATE(  
+       [Number of stations],  
        'Etats'[Total Available Docks] = 0,  
        'Etats'[Total Available Bikes] <> 0  
    )  
    ```  
 5. ```  
-   Nombre de stations vides = CALCULATE(  
-       [Nombre de stations],  
+   Number of empty stations = CALCULATE(  
+       [Number of stations],  
        'Etats'[Total Available Bikes] = 0  
    )  
    ```  
 6. ```  
-   Taux de remplissage des stations = DIVIDE(  
-       [Nombre de vélos disponibles],  
+   Station fill rate = DIVIDE(  
+       [Number of available bikes],  
        SUM(Stations[Capacity])  
    )  
    ```  
 7. ```  
-   Pourcentage de stations pleines = DIVIDE(  
-       [Nombre de stations pleines],  
-       [Nombre de stations]  
+   Percentage of full stations = DIVIDE(  
+       [Number of full stations],  
+       [Number of stations]  
    )  
    ```  
 8. ```  
-   Nombre de Stations Capacité Elevée = CALCULATE(  
-       [Nombre de stations],  
+   Number of stations with large capacity = CALCULATE(  
+       [Number of stations],  
        Stations[Capacity] > 35  
    )  
    ```  
 9. ```  
-   Capacité Station = MAX(Stations[Capacity])  
-   Rang Capacité Station = RANKX(ALL(Stations), [Capacite Station], , , DENSE)  
+   Station Capacity = MAX(Stations[Capacity])  
+   Station Capacity Rank = RANKX(ALL(Stations), [Station Capacity], , , DENSE)  
    ```  
-10. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```  
-11. ```Vélos Electrique disponibles = IF(SUM(Etats[Electric Bikes Available]) > 0, true, false)```  
+10. ```Average bikes per station = AVERAGE(Etats[Total Available Bikes])```  
+11. ```Mechanical bikes available tag = IF([Number of available mechanical bikes] > 0, true, false)```  
 12. ```  
-    Pourcentage vs Total = DIVIDE(  
+    Capacity % of total = DIVIDE(  
         SUM(Stations[Capacity]),  
         CALCULATE(SUM(Stations[Capacity]), ALL(Stations))  
     )  
@@ -76,8 +76,8 @@
 
 1. Create a table with a list of values from 0 to 10.  
 2. This table, without any relationship, is referred to as a "disconnected" table.  
-3. Create a measure `ScenarioDisponibilite` that retrieves the value selected by the user:  
+3. Create a measure `AvailabilityScenario` that retrieves the value selected by the user:  
    1. Use the `MIN()`, `MAX()`, or `SELECTEDVALUE()` function.  
-4. Create a measure that subtracts the `ScenarioDisponibilite` value from the number of available bikes.  
+4. Create a measure that subtracts the `AvailabilityScenario` value from the number of available bikes.  
 5. Create a slicer with the column from the disconnected table as the choice.  
 6. In a matrix, display the station names, the number of available bikes, and the new measure created in step 4. Play with the slicer to test the measure.  
