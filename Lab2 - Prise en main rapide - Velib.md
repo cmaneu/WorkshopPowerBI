@@ -7,62 +7,69 @@
 
 # Créer ses premières mesures 
 
-1. Nombre de stations
-2. Nombre de vélos disponibles
-3. Nombre de vélos mécaniques disponibles
-4. Nombre de stations pleines
-5. Nombre de stations vides
-6. Taux de remplissage des stations
+1. Nombre de vélos disponibles
+2. Nombre de vélos mécaniques disponibles
+3. Moyenne du nombre de vélos par station
+4. Nombre de stations
+5. Booléen qui indique s'il y a des vélibs mécaniques (True) ou non (False) dans la borne.
+6. Nombre de stations vides
+7. Nombre de stations dont la capacité est supérieure à 35
+8. Nombre de stations pleines
+9. Pourcentage de stations pleines
   - Pour effectuer une division, favoriser l'usage de la fonction DIVIDE( A, B), plutôt que "/" qui ne gère pas la division par zéro et qui peut générer des latences (CallBack)
   - Pour afficher le taux sous forme de %, cliquer sur la mesure et dans l'onglet Measure Tools, cliquer sur "%"
   - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)
-7. Pourcentage de stations pleines
-8. Nombre de station dont la capacité est supérieure à 35
-9. Rang de station en terme de capacité
-10. Moyenne du nombre de vélos par stations
-11. Booléen qui indique s'il y a des vélibs electriques ou non dans la borne.
-12. Pourcentage de capacité que contient la station pour toutes les capacités disponibles
+10. Taux de remplissage des stations (nombre de vélos disponibles comparé à la capacité)
+11. Pourcentage de capacité de la station comparé à la capacité totale
+12. Rang de station en terme de capacité
 
 # Réponses
-1. ```Nombre de stations = COUNTROWS(Stations)```
-2. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```
-3. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```
-4. ```
+1. ```Nombre de vélos disponibles = SUM(Etats[Total Available Bikes])```
+2. ```Nombre de vélos mécaniques disponibles = SUM(Etats[Mechanical Bikes Available])```
+3. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```
+4. ```Nombre de stations = DISTINCTCOUNT(Etats[Station Code])```
+5. ```Vélos Mécaniques disponibles = IF(SUM([Nombre de vélos mécaniques disponibles]) > 0, true, false)```
+6. ```
+    Nombre de stations vides = CALCULATE(
+       [Nombre de stations]
+       , 'Etats'[Total Available Bikes] = 0
+   )
+  ---
+7. ```
+    Nombre de Stations Capacité Elevée = CALCULATE(
+        [Nombre de stations]
+        , Stations[Capacity] > 35
+    )
+  ---
+8. ```
     Nombre de stations pleines = CALCULATE(
         [Nombre de stations]
         , 'Etats'[Total Available Docks] = 0 
         , 'Etats'[Total Available Bikes] <> 0 
     )
-5. ```
-    Nombre de stations vides = CALCULATE(
-        [Nombre de stations]
-        , 'Etats'[Total Available Bikes] = 0 
-    )
-6. ```
-    Taux de remplissage des stations = DIVIDE(
-        [Nombre de vélos disponibles]
-        , MAX(Stations[Capacity])
-    )
-7. ```
+  ---
+9. ```
     Pourcentage de stations pleines = DIVIDE(
         [Nombre de stations pleines]
         , [Nombre de stations]
     )
-8. ```
-    Nombre de Stations Capacité Elevée = CALCULATE(
-        [Nombre de stations]
-        , Stations[Capacity] > 35
+  ---
+10. ```
+    Taux de remplissage des stations = DIVIDE(
+        [Nombre de vélos disponibles]
+        , MAX(Stations[Capacity])
     )
-9. ```
-   Capacité Station = MAX(Stations[Capacity])
-   Rang Capacité Station = RANKX( ALL( Stations ), [Capacite Station] ,,,DENSE)
-10. ```Moyenne du nombre de vélos par stations = AVERAGE(Etats[Total Available Bikes])```
-11. ```Vélos Electrique disponibles = IF(SUM(Etats[Eletric Bikes Available]) > 0, true, false)```
-12. ```
+   ---
+11. ```
     Pourcentage vs Total = DIVIDE(
         SUM(Stations[Capacity])
         , CALCULATE( SUM(Stations[Capacity]), ALL(Stations) )
     )
+  ---
+12. ```
+    Capacité Station = MAX(Stations[Capacity])
+    Rang Capacité Station = RANKX( ALL( Stations ), [Capacite Station] ,,,DENSE)
+   ---
 
 # Scenario What-If
 
