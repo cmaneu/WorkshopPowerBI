@@ -7,70 +7,70 @@
 
 # Create Your First Measures  
 
-1. Number of stations  
-2. Number of available bikes  
-3. Number of available mechanical bikes  
-4. Number of full stations  
-5. Number of empty stations  
-6. Station fill rate  
+1. Number of available bikes
+2. Number of available mechanical bikes
+3. Average number of bikes per station
+4. Number of stations
+5. Boolean (True/False) indicating whether electric bikes are available (True) or not (False) at the station
+6. Number of empty stations
+9. Number of stations with large capacity (more than 35)
+10. Number of full stations
+11. Percentage of full stations
    - To perform a division, use the `DIVIDE(A, B)` function instead of `/`, as `DIVIDE` handles division by zero and reduces latencies (CallBack).  
    - To display the rate as a percentage, click on the measure and, in the _Measure Tools_ tab, click "%".  
-   - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)  
-7. Percentage of full stations  
-8. Number of stations with large capacity (more than 35)
-9. Station capacity rank
-10. Average bikes per station
-11. Boolean indicating whether electric bikes are available at the station  
-12. Percentage of the station's capacity compared to the total available capacity  
+   - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)
+12. Station fill rate (number of available bikes compared to capacity) 
+13. Percentage of the station's capacity compared to the total available capacity  
+14. Station capacity rank
 
 # Answers  
 
-1. ```Number of stations = DISTINCTCOUNT(Etats[Station Code])```  
-2. ```Number of available bikes = SUM(Etats[Total Available Bikes])```  
-3. ```Number of available mechanical bikes = SUM(Etats[Mechanical Bikes Available])```  
-4. ```  
+1. ```Number of available bikes = SUM(Etats[Total Available Bikes])```
+2. ```Number of available mechanical bikes = SUM(Etats[Mechanical Bikes Available])```
+3. ```Average bikes per station = AVERAGE(Etats[Total Available Bikes])```
+4. ```Number of stations = DISTINCTCOUNT(Etats[Station Code])```
+5. ```Mechanical bikes available tag = IF([Number of available mechanical bikes] > 0, true, false)```
+6. ```  
+   Number of empty stations = CALCULATE(  
+       [Number of stations],  
+       'Etats'[Total Available Bikes] = 0  
+   )  
+   ```
+7. ```
+    Number of stations with large capacity = CALCULATE(  
+       [Number of stations],  
+       Stations[Capacity] > 35
+    )  
+   ```  
+8. ```  
    Number of full stations = CALCULATE(  
        [Number of stations],  
        'Etats'[Total Available Docks] = 0,  
        'Etats'[Total Available Bikes] <> 0  
    )  
-   ```  
-5. ```  
-   Number of empty stations = CALCULATE(  
-       [Number of stations],  
-       'Etats'[Total Available Bikes] = 0  
-   )  
-   ```  
-6. ```  
-   Station fill rate = DIVIDE(  
-       [Number of available bikes],  
-       SUM(Stations[Capacity])  
-   )  
-   ```  
-7. ```  
+   ```
+9. ```  
    Percentage of full stations = DIVIDE(  
        [Number of full stations],  
        [Number of stations]  
    )  
    ```  
-8. ```  
-   Number of stations with large capacity = CALCULATE(  
-       [Number of stations],  
-       Stations[Capacity] > 35  
-   )  
-   ```  
-9. ```  
-   Station Capacity = MAX(Stations[Capacity])  
-   Station Capacity Rank = RANKX(ALL(Stations), [Station Capacity], , , DENSE)  
-   ```  
-10. ```Average bikes per station = AVERAGE(Etats[Total Available Bikes])```  
-11. ```Mechanical bikes available tag = IF([Number of available mechanical bikes] > 0, true, false)```  
-12. ```  
-    Capacity % of total = DIVIDE(  
-        SUM(Stations[Capacity]),  
-        CALCULATE(SUM(Stations[Capacity]), ALL(Stations))  
+10. ```
+    Station fill rate = DIVIDE(  
+       [Number of available bikes],  
+       SUM(Stations[Capacity])
     )  
-    ```  
+   ```
+11. ```
+   Capacity % of total = DIVIDE(  
+      SUM(Stations[Capacity]),  
+      CALCULATE(SUM(Stations[Capacity]), ALL(Stations))  
+    )  
+    ```
+12. ```
+    Station Capacity = MAX(Stations[Capacity])
+    Station Capacity Rank = RANKX(ALL(Stations), [Station Capacity], , , DENSE)  
+   ```
 
 # What-If Scenario  
 
