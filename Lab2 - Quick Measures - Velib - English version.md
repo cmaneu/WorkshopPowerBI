@@ -13,15 +13,15 @@
 4. Number of stations
 5. Boolean (True/False) indicating whether electric bikes are available (True) or not (False) at the station
 6. Number of empty stations
-9. Number of stations with large capacity (more than 35)
-10. Number of full stations
-11. Percentage of full stations
+7. Number of stations with large capacity (more than 35)
+8. Number of full stations
+9. Percentage of full stations
    - To perform a division, use the `DIVIDE(A, B)` function instead of `/`, as `DIVIDE` handles division by zero and reduces latencies (CallBack).  
    - To display the rate as a percentage, click on the measure and, in the _Measure Tools_ tab, click "%".  
    - ![image](https://github.com/user-attachments/assets/c2d915fb-0721-4446-86c3-42540c9fe64c)
-12. Station fill rate (number of available bikes compared to capacity) 
-13. Percentage of the station's capacity compared to the total available capacity  
-14. Station capacity rank
+10. Station fill rate (number of available bikes compared to capacity) 
+11. Percentage of the station's capacity compared to the total available capacity  
+12. Station capacity rank
 
 # Answers  
 
