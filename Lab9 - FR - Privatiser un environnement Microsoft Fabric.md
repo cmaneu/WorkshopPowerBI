@@ -49,9 +49,11 @@ Create VNET
 ![Capture d'écran 2025-03-12 124417](https://github.com/user-attachments/assets/1eff4f78-6dd5-4a9c-bd1e-b5197f71f736)
 
 
-
+Create Spoke pour VMs
 ![Capture d'écran 2025-03-12 142824](https://github.com/user-attachments/assets/bed1c7bc-719a-4ed0-a6b9-d2b3b53183b9)
 
+Def Subnets 
+![Capture d'écran 2025-03-12 142914](https://github.com/user-attachments/assets/389996f5-b41d-4fea-80da-86c8cac5d0c3)
 
-peerings
+Define Peerings
 ![Capture d'écran 2025-03-12 143316](https://github.com/user-attachments/assets/1d9cd631-e602-4a27-ba18-50559cc68a4d)
