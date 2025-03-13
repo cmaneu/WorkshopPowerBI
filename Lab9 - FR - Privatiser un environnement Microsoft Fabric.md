@@ -12,7 +12,6 @@
 Enable Private Links
 ![Capture d'écran 2025-03-12 111730](https://github.com/user-attachments/assets/4fcba74a-4e9e-4aff-b505-18f8c48cb04f)
 
-
 Create RG
 ![image](https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954)
 ![Capture d'écran 2025-03-12 111848](https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5)
@@ -38,7 +37,7 @@ Get About Pbi
 
 ![Capture d'écran 2025-03-12 113704](https://github.com/user-attachments/assets/a4777ba1-5507-4316-b382-6f416a26fb23)
 
-
+# Réseau
 Create VNET 
 ![Capture d'écran 2025-03-12 123900](https://github.com/user-attachments/assets/ff41ecea-a3f3-4c69-8b9e-cea5fc427ae7)
 
@@ -57,3 +56,14 @@ Def Subnets
 
 Define Peerings
 ![Capture d'écran 2025-03-12 143316](https://github.com/user-attachments/assets/1d9cd631-e602-4a27-ba18-50559cc68a4d)
+
+![image](https://github.com/user-attachments/assets/66c6897f-7121-456f-a3e2-3f6a73e3247c)
+![image](https://github.com/user-attachments/assets/705f13b0-d913-4215-9768-a3832d31a3fc)
+
+Repeat steps Spoke for private link endpoints
+
+![image](https://github.com/user-attachments/assets/acd32b71-d81c-4c6f-a44c-9ebdc6238a8c)
+![image](https://github.com/user-attachments/assets/e2cc4ccb-d9a6-4d72-ba70-e5f0265cc41f)
+![image](https://github.com/user-attachments/assets/4608f9eb-5622-4a21-b24c-b6baac2fedda)
+![image](https://github.com/user-attachments/assets/2641d2bf-00c2-4ee1-8ade-1716dffe2dc2)
+![image](https://github.com/user-attachments/assets/4c1c97e2-a4dd-4c9a-be3a-f2e30cb2a674)
