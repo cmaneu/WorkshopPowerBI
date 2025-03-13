@@ -67,3 +67,10 @@ Repeat steps Spoke for private link endpoints
 ![image](https://github.com/user-attachments/assets/4608f9eb-5622-4a21-b24c-b6baac2fedda)
 ![image](https://github.com/user-attachments/assets/2641d2bf-00c2-4ee1-8ade-1716dffe2dc2)
 ![image](https://github.com/user-attachments/assets/4c1c97e2-a4dd-4c9a-be3a-f2e30cb2a674)
+
+Create VM 
+![image](https://github.com/user-attachments/assets/8a8c9266-470a-4f25-9642-b81d0d4298c8)
+![image](https://github.com/user-attachments/assets/0b119e98-0aed-4b85-9371-d0319e55900d)
+![image](https://github.com/user-attachments/assets/797a0098-62cc-4d23-9398-db9e08182c6f)
+![image](https://github.com/user-attachments/assets/463a8ea6-29ad-4765-8096-40b801e62846)
+![image](https://github.com/user-attachments/assets/0b8793eb-2357-4063-a371-f58a53bb69e2)
