@@ -124,6 +124,12 @@ YAML files are structured using indentation (usually with spaces, not tabs) to r
 Replace ubuntu with windows
 ![image](https://github.com/user-attachments/assets/2b959147-0102-4faf-b6ea-326c3d5f463c)
 
+Create credentials
+![image](https://github.com/user-attachments/assets/3da9eeee-2730-4a15-bf70-6764d798311b)
+
+![image](https://github.com/user-attachments/assets/b3f657df-07e4-4e23-9fdf-3f59c90c51d9)
+
+![image](https://github.com/user-attachments/assets/ed031a9f-1e14-413b-a958-97c2db685857)
 
 
 # Github
@@ -132,3 +138,15 @@ Replace ubuntu with windows
 2) Déploiement via .BIM
 3) Version Control
 4) Déploiement via Github action
+
+# Report 
+
+![image](https://github.com/user-attachments/assets/8b993604-ebdc-4381-af50-aaa91bdf398e)
+
+![image](https://github.com/user-attachments/assets/659b2c81-1e7a-470f-a3e8-ae3ed1cc841a)
+
+![image](https://github.com/user-attachments/assets/4ca4f044-2d10-4a11-b266-b9fcbf4cf716)
+
+![image](https://github.com/user-attachments/assets/04630271-dd73-4119-bda8-ab2008967dcf)
+
+
