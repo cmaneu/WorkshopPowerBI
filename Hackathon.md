@@ -1,0 +1,4 @@
+Install Kernel
+
+![image](https://github.com/user-attachments/assets/bb5b23e5-5914-4631-928c-c1eed3c32e6d)
+
