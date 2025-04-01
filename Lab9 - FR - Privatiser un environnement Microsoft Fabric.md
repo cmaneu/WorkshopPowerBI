@@ -74,3 +74,12 @@ Create VM
 ![image](https://github.com/user-attachments/assets/797a0098-62cc-4d23-9398-db9e08182c6f)
 ![image](https://github.com/user-attachments/assets/463a8ea6-29ad-4765-8096-40b801e62846)
 ![image](https://github.com/user-attachments/assets/0b8793eb-2357-4063-a371-f58a53bb69e2)
+
+
+
+
+
+
+
+Dans le hub direk 
+![image](https://github.com/user-attachments/assets/7880e14d-df1f-48da-be46-5c1a9eaa6259)
