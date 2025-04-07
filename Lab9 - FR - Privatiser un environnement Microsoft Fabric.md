@@ -56,6 +56,7 @@ Def Subnets
 
 Define Peerings
 ![Capture d'écran 2025-03-12 143316](https://github.com/user-attachments/assets/1d9cd631-e602-4a27-ba18-50559cc68a4d)
+![image](https://github.com/user-attachments/assets/e5b34aef-d0fc-45de-b02d-abc60c9ce7b6)
 
 ![image](https://github.com/user-attachments/assets/66c6897f-7121-456f-a3e2-3f6a73e3247c)
 ![image](https://github.com/user-attachments/assets/705f13b0-d913-4215-9768-a3832d31a3fc)
