@@ -98,6 +98,14 @@ Create VM
 ![image](https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba)
 ![image](https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345)
 
+Create PE 
+![image](https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe)
+![image](https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc)
+![image](https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d)
 
+Connect via Bastion 
+
+Ns lookup : 
+![image](https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3)
 
 
