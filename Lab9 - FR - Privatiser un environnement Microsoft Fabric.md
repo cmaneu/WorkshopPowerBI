@@ -69,6 +69,9 @@ Repeat steps Spoke for private link endpoints
 ![image](https://github.com/user-attachments/assets/2641d2bf-00c2-4ee1-8ade-1716dffe2dc2)
 ![image](https://github.com/user-attachments/assets/4c1c97e2-a4dd-4c9a-be3a-f2e30cb2a674)
 
+DNS Links
+![image](https://github.com/user-attachments/assets/acbfcccc-3010-497e-8b4f-aaa551939c04)
+
 Create VM 
 ![image](https://github.com/user-attachments/assets/8a8c9266-470a-4f25-9642-b81d0d4298c8)
 ![image](https://github.com/user-attachments/assets/0b119e98-0aed-4b85-9371-d0319e55900d)
@@ -76,11 +79,25 @@ Create VM
 ![image](https://github.com/user-attachments/assets/463a8ea6-29ad-4765-8096-40b801e62846)
 ![image](https://github.com/user-attachments/assets/0b8793eb-2357-4063-a371-f58a53bb69e2)
 
+![image](https://github.com/user-attachments/assets/588aca89-8702-4d63-9435-9df110468129)
+
+
+# All in One : 
+
+Create VNET 
+![image](https://github.com/user-attachments/assets/2355d410-83c6-4711-9c69-5134efa75b6a)
+With Bastion
+![image](https://github.com/user-attachments/assets/e7170bdb-dd44-40ed-b6fe-3738a641e106)
+Define Subnets
+![image](https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8)
+Create
+
+Create VM 
+![image](https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1)
+![image](https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506)
+![image](https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba)
+![image](https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345)
 
 
 
 
-
-
-Dans le hub direk 
-![image](https://github.com/user-attachments/assets/7880e14d-df1f-48da-be46-5c1a9eaa6259)
