@@ -108,4 +108,25 @@ Connect via Bastion
 Ns lookup : 
 ![image](https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3)
 
+Test desac
+![image](https://github.com/user-attachments/assets/8e65693c-b43a-4f8b-9186-d691f3f76f73)
+![image](https://github.com/user-attachments/assets/8c3ae0d1-2626-4f4f-be85-97356105645d)
+![image](https://github.com/user-attachments/assets/aef0c1ea-e111-4771-b57a-9420f2bac3ec)
+
+Depuis le poste : 
+![image](https://github.com/user-attachments/assets/aad07028-6c18-41ad-80cd-cfbe7529ab2a)
+
+Create SA : 
+![image](https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8)
+![image](https://github.com/user-attachments/assets/63a69146-5ef2-434c-aae4-9ae169d8364f)
+![image](https://github.com/user-attachments/assets/a13ae6b9-47ee-4cb2-868f-22052cbbecbf)
+![image](https://github.com/user-attachments/assets/7abcac83-4384-4aa9-8764-102ba547e8cf)
+
+Create wks :
+![image](https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9)
+```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.Storage/storageAccounts/safabricprivate```
+![image](https://github.com/user-attachments/assets/afdf748a-13a8-4bf9-8567-6e3173109ce4)
+![image](https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397)
+![image](https://github.com/user-attachments/assets/ced69224-96ba-422a-a683-e99af82ed63a)
+![image](https://github.com/user-attachments/assets/68649b63-1378-42cb-93d3-47d51d13604b)
 
