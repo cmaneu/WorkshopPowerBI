@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/30ea44ae-4430-4a93-85dd-c173af572cd2)# Introduction & Architecture Générale
+# Introduction & Architecture Générale
 
 1.
 2. 
@@ -162,7 +162,7 @@ Create wks :
 ![image](https://github.com/user-attachments/assets/a2682b80-86b0-45fc-8fd6-ee1c3648467f)
 ![image](https://github.com/user-attachments/assets/44141c0c-f1e7-488b-acb5-26806ee7fb69)
 ![image](https://github.com/user-attachments/assets/d9fa770d-a26c-4dfb-8305-58a0d60f6777)
-
+![image](https://github.com/user-attachments/assets/30ea44ae-4430-4a93-85dd-c173af572cd2)
 ![image](https://github.com/user-attachments/assets/04da8163-6f38-4182-bbeb-39e3a3f5ca41)
 
 Create key 
