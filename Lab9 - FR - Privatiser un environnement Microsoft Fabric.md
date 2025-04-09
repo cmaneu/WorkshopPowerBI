@@ -98,6 +98,7 @@ Create VM
 ![image](https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba)
 ![image](https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345)
 
+
 Create PE 
 ![image](https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe)
 ![image](https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc)
@@ -130,3 +131,14 @@ Create wks :
 ![image](https://github.com/user-attachments/assets/ced69224-96ba-422a-a683-e99af82ed63a)
 ![image](https://github.com/user-attachments/assets/68649b63-1378-42cb-93d3-47d51d13604b)
 
+![image](https://github.com/user-attachments/assets/c6557c00-72a7-4118-887b-118fc68f1034)
+![image](https://github.com/user-attachments/assets/c1359d7e-b59a-4308-9df3-38780dcb11d9)
+![image](https://github.com/user-attachments/assets/b765fe16-f328-4934-9a71-de26299bd597)
+
+![image](https://github.com/user-attachments/assets/3c4b5b94-e748-4231-8996-836927eaec84)
+![image](https://github.com/user-attachments/assets/97cca32a-8cb0-40de-bf04-d41621b245db)
+
+
+Roles 
+![image](https://github.com/user-attachments/assets/2165a8ac-411d-4e5d-bd6c-d58c0023824c)
+![image](https://github.com/user-attachments/assets/2aa9286a-03ad-4e19-a647-d8319a586dfb)
