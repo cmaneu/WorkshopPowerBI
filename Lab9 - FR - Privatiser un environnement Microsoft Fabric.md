@@ -1,4 +1,4 @@
-# Introduction & Architecture Générale
+![image](https://github.com/user-attachments/assets/30ea44ae-4430-4a93-85dd-c173af572cd2)# Introduction & Architecture Générale
 
 1.
 2. 
@@ -125,6 +125,9 @@ Create SA :
 
 Create wks :
 ![image](https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9)
+
+```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Storage/storageAccounts/{storage-account-name}```
+
 ```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.Storage/storageAccounts/safabricprivate```
 ![image](https://github.com/user-attachments/assets/afdf748a-13a8-4bf9-8567-6e3173109ce4)
 ![image](https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397)
@@ -139,6 +142,29 @@ Create wks :
 ![image](https://github.com/user-attachments/assets/97cca32a-8cb0-40de-bf04-d41621b245db)
 
 
-Roles 
+# Roles 
 ![image](https://github.com/user-attachments/assets/2165a8ac-411d-4e5d-bd6c-d58c0023824c)
 ![image](https://github.com/user-attachments/assets/2aa9286a-03ad-4e19-a647-d8319a586dfb)
+
+# Key Vault
+![image](https://github.com/user-attachments/assets/d6136e47-4c03-4fa3-a011-9fadad19517d)
+![image](https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72)
+![image](https://github.com/user-attachments/assets/ada19118-87ae-45dc-a7db-e6ffac0ce9dc)
+![image](https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546)
+
+```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
+```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
+
+![image](https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd)
+![image](https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f)
+![image](https://github.com/user-attachments/assets/cf7cc421-399c-40f3-80b7-398a07f8c848)
+![image](https://github.com/user-attachments/assets/166f30b7-879c-413c-b71c-7c869b7da732)
+![image](https://github.com/user-attachments/assets/a2682b80-86b0-45fc-8fd6-ee1c3648467f)
+![image](https://github.com/user-attachments/assets/44141c0c-f1e7-488b-acb5-26806ee7fb69)
+![image](https://github.com/user-attachments/assets/d9fa770d-a26c-4dfb-8305-58a0d60f6777)
+
+![image](https://github.com/user-attachments/assets/04da8163-6f38-4182-bbeb-39e3a3f5ca41)
+
+Create key 
+![image](https://github.com/user-attachments/assets/a509871c-1e50-4a61-bd40-50d3f7cd1584)
+
