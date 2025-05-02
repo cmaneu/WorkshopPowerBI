@@ -40,7 +40,7 @@ Pour ce pas à pas, nous aurons besoin :
       - Pour activer/desactiver les features au sein du portail
       - La possibilité de créer un workspace, qui va contenir un Notebook
 
-# Pas à pas 
+# Pas à pas : Partie 1 : Mettre en place l'accès au portail de manière privée. 
 
 Il existe une documentation Microsoft permettant de créer un Private Link pour Power BI et Microsoft Fabric. Je reprends ces éléments en détail pour le début du lab : https://learn.microsoft.com/en-us/fabric/security/security-private-links-use 
 
@@ -208,14 +208,20 @@ S'il on essaye d'accéder au portail directement depuis un navigateur, en dehors
 
 <img src="https://github.com/user-attachments/assets/aad07028-6c18-41ad-80cd-cfbe7529ab2a" width="600">
 
-Create SA : 
-<img src="https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8" width="300">
-<img src="https://github.com/user-attachments/assets/63a69146-5ef2-434c-aae4-9ae169d8364f" width="300">
-<img src="https://github.com/user-attachments/assets/a13ae6b9-47ee-4cb2-868f-22052cbbecbf" width="300">
-<img src="https://github.com/user-attachments/assets/7abcac83-4384-4aa9-8764-102ba547e8cf" width="300">
+# Partie 2 : Accéder aux services et données dans Azure depuis Microsoft Fabric 
 
-Create wks :
+# 1. Création d'un compte de stockage 
+
+<img src="https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8" width="500">
+<img src="https://github.com/user-attachments/assets/63a69146-5ef2-434c-aae4-9ae169d8364f" width="500">
+<img src="https://github.com/user-attachments/assets/a13ae6b9-47ee-4cb2-868f-22052cbbecbf" width="500">
+<img src="https://github.com/user-attachments/assets/7abcac83-4384-4aa9-8764-102ba547e8cf" width="500">
+
+# 2. Creation du workspace au sein de Microsoft Fabric : 
+
 <img src="https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9" width="300">
+
+# . Création des deux Private Endpoints vers ADLS Gen 2 : 
 
 ```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Storage/storageAccounts/{storage-account-name}```
 
@@ -223,6 +229,17 @@ Create wks :
 
 <img src="https://github.com/user-attachments/assets/afdf748a-13a8-4bf9-8567-6e3173109ce4" width="300">
 <img src="https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397" width="300">
+
+<img src="https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546" width="300">
+
+```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
+```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
+
+<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
+<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
+
+# Workspace Identities
+
 <img src="https://github.com/user-attachments/assets/ced69224-96ba-422a-a683-e99af82ed63a" width="300">
 <img src="https://github.com/user-attachments/assets/68649b63-1378-42cb-93d3-47d51d13604b" width="300">
 
@@ -233,7 +250,6 @@ Create wks :
 <img src="https://github.com/user-attachments/assets/3c4b5b94-e748-4231-8996-836927eaec84" width="300">
 <img src="https://github.com/user-attachments/assets/97cca32a-8cb0-40de-bf04-d41621b245db" width="300">
 
-
 # Roles 
 <img src="https://github.com/user-attachments/assets/2165a8ac-411d-4e5d-bd6c-d58c0023824c" width="300">
 <img src="https://github.com/user-attachments/assets/2aa9286a-03ad-4e19-a647-d8319a586dfb" width="300">
@@ -242,13 +258,8 @@ Create wks :
 <img src="https://github.com/user-attachments/assets/d6136e47-4c03-4fa3-a011-9fadad19517d" width="300">
 <img src="https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72" width="300">
 <img src="https://github.com/user-attachments/assets/ada19118-87ae-45dc-a7db-e6ffac0ce9dc" width="300">
-<img src="https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546" width="300">
 
-```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
-```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
 
-<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
-<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
 <img src="https://github.com/user-attachments/assets/cf7cc421-399c-40f3-80b7-398a07f8c848" width="300">
 <img src="https://github.com/user-attachments/assets/166f30b7-879c-413c-b71c-7c869b7da732" width="300">
 <img src="https://github.com/user-attachments/assets/a2682b80-86b0-45fc-8fd6-ee1c3648467f" width="300">
@@ -259,6 +270,8 @@ Create wks :
 
 Create key 
 <img src="https://github.com/user-attachments/assets/a509871c-1e50-4a61-bd40-50d3f7cd1584" width="300">
+
+# Use Key Vault & Notebook 
 
 <img src="https://github.com/user-attachments/assets/f3063673-09e1-4511-9a58-78be4d3c1385" width="300">
 <img src="https://github.com/user-attachments/assets/595294b8-4783-41d1-aee8-e4faad48622d" width="300">
