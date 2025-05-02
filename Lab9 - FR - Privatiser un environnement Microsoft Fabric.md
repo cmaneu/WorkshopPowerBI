@@ -20,7 +20,25 @@ Une fois ces différents pré-requis validés, nous allons voir comment nous pou
 
 ![image](https://github.com/user-attachments/assets/ab850c9f-8417-478f-bf26-a90a1baad66a)
 
+L'usage d'une VM dans Azure n'est pas nécessaire. 
+
 # Pré requis
+
+Pour ce pas à pas, nous aurons besoin : 
+  - **Les rôles** : 
+    - Au sein d'Azure, nous avons besoin des droits de création dans une souscription de test ou d'un groupe de ressources 
+    - Au sein de Microsoft Fabric, des droits d'administrateurs sur l'environnement. 
+  - **Les ressources** : 
+    - D'un environnement **Azure**, avec la possibilité de créer :
+      - Une capacité Microsoft Fabric 
+      - Un Virtual Network ainsi qu'un Bastion
+      - Une Virtual Machine 
+      - Un private Link Services
+      - Un Key Vault
+      - Un Azure Data Lake Storage Gen 2
+    - D'un environnement **Microsoft Fabric** avec le rôle Administrateur :
+      - Pour activer/desactiver les features au sein du portail
+      - La possibilité de créer un workspace, qui va contenir un Notebook
 
 # Pas à pas 
 
