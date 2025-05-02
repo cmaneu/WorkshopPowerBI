@@ -1,9 +1,13 @@
 # Introduction & Architecture Générale
 
-1.
-2. 
-3.
-4.
+L'objectif de ce pas à pas est de proposer un environnement de travail au sein de Microsoft Fabric avec les leviers de sécurité d'accès les plus restrictifs. Le but est de fournir l'accès aux ressources uniquement depuis le réseau interne d'une entreprise ou d'une organisation. Nous allons pas à pas déployer un environnement qui respecte les contraintes suivantes : 
+  - Utilisation du Private Link : Les échanges avec Power BI et/ou Microsoft Fabric sont fait via le réseau Azure, et non via Internet. Cela permet de contrôler le point d'entrée des utilisateur, ainsi que les intéreactions avec les données qui transitent vers et en dehors de Microsoft Fabric. 
+  - Désactivation de l'accès depuis Internet public : Non seulement l'accès se fait via les services interne Azure, mais en plus l'accès au portail ne peut plus se faire via l'IP publique du service.
+  - Désactivation des accès public aux ressources dans Azure : En désactivant les accès au Key Vault (container des clés d'identifications) ou à ADLS Gen2 (container des données) via un réseau public, on interdit aussi les accès depuis n'importe quel endroit
+  - Utilisation de private endpoints pour les services Azure : On définit un point d'entrée approuvé pour accéder aux ressources Azure, ce point d'entrée est donc strictement réservé à un service ou un usage.
+  - Consommations des services Azure via Microsoft Fabric de manière privée : Une fois l'accès au portail restreint, les échanges entre le service et les ressources maîtrisé, les utilisateurs et développeurs évolueront dans un environnement cloisoné.  
+
+Une fois ces différents pré-requis validés, nous allons voir comment nous pouvons utiliser Microsoft Fabric pour transformer nos données et les faire évoluer dans notre environnement. 
 
 # Pré requis
 
