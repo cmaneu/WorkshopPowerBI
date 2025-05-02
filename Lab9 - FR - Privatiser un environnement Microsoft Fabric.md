@@ -112,7 +112,7 @@ Aussi, dans mon cas je n'ai pas de réseau d'Entreprise à relier à notren infr
 
 _Dans cette partie, nous allons créer les ressources réseaux nécessaire au regroupement de nos services._
 
-**Creation du VNET**
+**Création du VNET**
 
 Depuis le groupe de ressource : Créer > rechercher _Virtual Network_ > Créer une ressource. 
 
@@ -128,11 +128,10 @@ Dans l'onglet **IP Adresses**, définir les plages réseaux nécessaires à notr
 
 <img src="https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8" width="500">
 
-**Create PE** 
+**Création du Private Endpoint pour Power BI & Microsoft Fabric** 
 
-<img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="300">
-<img src="https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc" width="300">
-<img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="300">
+<img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="500">
+<img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="500">
 
 ## 5. Creation de la machine virtuelle
 
