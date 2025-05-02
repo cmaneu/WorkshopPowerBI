@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/90529214-996c-4176-8ebd-4aa797e65aeb)# Introduction & Architecture Générale
+# Introduction & Architecture Générale
 
 L'objectif de ce pas à pas est de proposer un environnement de travail au sein de Microsoft Fabric avec les leviers de sécurité d'accès les plus restrictifs. Nous allons découvrir comment fournir l'accès aux ressources uniquement depuis le réseau interne d'une entreprise ou d'une organisation, pour être capable de développer un Notebook Spark au sein de Microsoft Fabric, qui aurait besoin d'atteindre des données contenues dans un Data Lake au sein d'Azure. L'échange entre l'utilisateur et la plateforme se fait ne manière privée, et l'échange entre Microsoft Azure et Microsoft Fabric se fait lui aussi de manière privée.
 
@@ -130,6 +130,8 @@ Dans l'onglet **IP Adresses**, définir les plages réseaux nécessaires à notr
 
 **Création du Private Endpoint pour Power BI & Microsoft Fabric** 
 
+C'est le service qui va nous permettre de communiquer avec Microsoft Fabric de manière privée. 
+
 Depuis le groupe de ressource : Créer > rechercher _Private Endpoint_ > Créer une ressource. 
 
 Dans l'onglet **Basics**, renseigner le de resource group ainsi que le nom du private endpoint :  
@@ -153,7 +155,7 @@ Dans l'onglet **DNS**, définir les 3 DNS Private Zone pour notre service (ils d
 
 ## 5. Creation de la machine virtuelle
 
-Une fois le réseau virtuel créé, nous allons créer une machine virtuelle permettant de simuler un poste utilisateur intégré à un réseau privé.
+Une fois le réseau virtuel créé, nous allons créer une machine virtuelle permettant de simuler un poste utilisateur intégré à un réseau privé. C'est notre point d'entrée pour accéder à Microsoft Fabric. 
 
 Depuis le groupe de ressource : Créer > rechercher _Virtual Machine_ > Créer une ressource. 
 
@@ -185,19 +187,26 @@ Une fois connecté à la VM, démarrer une invite de commande : Menu Windows > t
 
 Retourner sur le portail Azure, trouver la ressource _private endpoint_ créée précédement, et se rendre dans Settings > DNS Configuration : copier la valeur dans la colonne FQDN :
 
-<img src="https://github.com/user-attachments/assets/a68193ae-8274-4697-9874-5c8957cbcd9a" width="500">
+<img src="https://github.com/user-attachments/assets/a68193ae-8274-4697-9874-5c8957cbcd9a" width="800">
 
-Ns lookup : 
+Depuis l'onglet Bastion pour la VM, nous allons tester le FQDN du DNS :  
+Remplacer la valeur du FQDN par celle récupérée sur le portail : ```nslookup e171a59a21664df89256ed18abb8ee91-api.analysis.windows.net```
 
 <img src="https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3" width="500">
 
-Test desac
-<img src="https://github.com/user-attachments/assets/8e65693c-b43a-4f8b-9186-d691f3f76f73" width="300">
-<img src="https://github.com/user-attachments/assets/8c3ae0d1-2626-4f4f-be85-97356105645d" width="300">
-<img src="https://github.com/user-attachments/assets/aef0c1ea-e111-4771-b57a-9420f2bac3ec" width="300">
+L'idée est d'observer que l'adresse récupérée est bien une adresse ausein de notre réseau (en 10.X.X.X) et non une IP publique. 
 
-Depuis le poste : 
-<img src="https://github.com/user-attachments/assets/aad07028-6c18-41ad-80cd-cfbe7529ab2a" width="300">
+Une fois qu'il est possible d'accéder au portail via une IP privée, nous allons désactiver l'accès au portail via Internet. Depuis la VM, se connecter au portail Power BI, et se rendre à nouveau dans les paramètres du tenant > Activer le paramètre Block Public Internet Access :  
+
+<img src="https://github.com/user-attachments/assets/aef0c1ea-e111-4771-b57a-9420f2bac3ec" width="500">
+
+**Ce paramètre ne peut pas être désactivé depuis une IP publique par sécurité.** 
+
+<img src="https://github.com/user-attachments/assets/8c3ae0d1-2626-4f4f-be85-97356105645d" width="800">
+
+S'il on essaye d'accéder au portail directement depuis un navigateur, en dehors de la VM : 
+
+<img src="https://github.com/user-attachments/assets/aad07028-6c18-41ad-80cd-cfbe7529ab2a" width="600">
 
 Create SA : 
 <img src="https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8" width="300">
