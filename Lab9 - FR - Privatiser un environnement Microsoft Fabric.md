@@ -91,7 +91,8 @@ Une fois le bloc de code apparu à l'écran : copier le code ci-dessous, en remp
           }
       }
   ]
-}```
+}
+```
 
 Une fois renseigné, passer les onglets de création en renseignant les informations liées au resource group, puis Valider la création : 
 
