@@ -42,7 +42,7 @@ Pour ce pas à pas, nous aurons besoin :
 
 # Pas à pas 
 
-Il existe une documentation Microsoft permettant de créer un Private Link pour Power BI et Microsoft Fabric. Je reprends ces éléments en détail pour le début du lab. 
+Il existe une documentation Microsoft permettant de créer un Private Link pour Power BI et Microsoft Fabric. Je reprends ces éléments en détail pour le début du lab : https://learn.microsoft.com/en-us/fabric/security/security-private-links-use 
 
 **Activation des features dans le portail Power BI :**
 
@@ -51,7 +51,7 @@ Dans le portail d'administration Power BI, nous allons activer la feature permet
 <img src="https://github.com/user-attachments/assets/638cbb9f-7586-41c0-a6fb-2809fddb171d" width="300">
 <img src="https://github.com/user-attachments/assets/4fcba74a-4e9e-4aff-b505-18f8c48cb04f" width="400">
 
-Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur "?" dans l'en-tête > About Power BI > et copier le GUID après _ctid=_. Nous allons noter cet ID pour plus tard. 
+Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur "?" dans l'en-tête > About Power BI > et copier le GUID après _ctid=_. **Nous allons noter cet ID pour plus tard.** 
 
 <img src="https://github.com/user-attachments/assets/eda6e8f3-7528-4452-acbd-5e5cd6cccd8c" width="300">
 <img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
@@ -59,25 +59,27 @@ Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur 
 **Création des ressources dans Azure :**
 
 Depuis le portail Azure : ```https://portal.azure.com``` : 
-Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher "resource group" (il est préférable de ne filtrer que les services Azure) > Créer > Choisir la souscription retenue, et renseigner le nom du groupe de ressources. 
+Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher ```resource group``` (il est préférable de ne filtrer que les services Azure) > Créer > Choisir la souscription retenue, et renseigner le nom du groupe de ressources. **Noter ce nom de resource group pour plus tard.**
 
 <img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="500">
 <img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="500">
 
-Une fois le resource group créé > Dans le centre de notifcation, accéder au groupe de ressources > Choisir Créer dans l'en-tête, et créer un template ARM. Ce template nous permet de créer une ressource via du Code sans passer par les différents menus. 
+**Création du private Link Service pour Power BI (même pour Microsoft Fabric, cela s'appelle Power BI) :**
+Une fois le resource group créé > Dans le centre de notifcation, accéder au groupe de ressources > Choisir Créer dans l'en-tête > Rechercher ```Template deployment``` > Créer. Ce template nous permet de créer une ressource via du Code sans passer par les différents menus. 
 
 <img src="https://github.com/user-attachments/assets/796576ae-db3a-4b57-b5df-62234418f900" width="300">
-<img src="https://github.com/user-attachments/assets/9c076b8e-e2d5-4eb5-b71f-43469ba176d0" width="300">
-<img src="https://github.com/user-attachments/assets/3dd14a61-365e-4f5b-85d9-c15de5bec98b" width="300">
+<img src="https://github.com/user-attachments/assets/9c076b8e-e2d5-4eb5-b71f-43469ba176d0" width="500">
+<img src="https://github.com/user-attachments/assets/3dd14a61-365e-4f5b-85d9-c15de5bec98b" width="500">
 
-Change variables 
-<img src="https://github.com/user-attachments/assets/4d72d13c-183e-436c-8328-205af0a96310" width="300">
+Une fois le bloc de code apparu à l'écran : copier le code ci-dessous, en remplaçant : 
+- La valeur de l'attribut name pour le nom du private link service
+- La valeur de l'attribut tenantId pour l'ID de l'environnement récupéré sur Power BI.
 
+Une fois renseigné, passer les onglets de création en renseignant les informations liées au resource group, puis Valider la création : 
 
-
-<img src="https://github.com/user-attachments/assets/550dd9a7-6823-45a1-bb5a-98af24b5096d" width="300">
-
-<img src="https://github.com/user-attachments/assets/a4777ba1-5507-4316-b382-6f416a26fb23" width="300">
+<img src="https://github.com/user-attachments/assets/4d72d13c-183e-436c-8328-205af0a96310" width="500">
+<img src="https://github.com/user-attachments/assets/550dd9a7-6823-45a1-bb5a-98af24b5096d" width="400">
+<img src="https://github.com/user-attachments/assets/a4777ba1-5507-4316-b382-6f416a26fb23" width="500">
 
 # Réseau
 Create VNET 
