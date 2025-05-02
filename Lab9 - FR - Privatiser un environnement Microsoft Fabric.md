@@ -46,6 +46,8 @@ Il existe une documentation Microsoft permettant de créer un Private Link pour 
 
 **1. Activation des features dans le portail Power BI :**
 
+_Dans cette partie, nous allons activer la feature Private Link qui nous permet d'accéder aux ressources via le Backbone Azure._
+
 Dans le portail d'administration Power BI, nous allons activer la feature permettant d'utiliser les Private Links : Accéder au portail d'administartion, rechercher les paramètres réseaux avancés, et activer la feature : 
 
 <img src="https://github.com/user-attachments/assets/638cbb9f-7586-41c0-a6fb-2809fddb171d" width="300">
@@ -57,6 +59,8 @@ Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur 
 <img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
 
 **2. Création du groupe de ressources dans Azure :**
+
+_Dans cette partie, nous allons créer le container de nos ressources ainsi que le service private Link côté Azure._
 
 Depuis le portail Azure : ```https://portal.azure.com``` : 
 Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher ```resource group``` (il est préférable de ne filtrer que les services Azure) > Créer > Choisir la souscription retenue, et renseigner le nom du groupe de ressources. **Noter ce nom de resource group pour plus tard.**
@@ -104,21 +108,41 @@ Une fois renseigné, passer les onglets de création en renseignant les informat
 
 L'architecture réseau ne respecte pas aujourd'hui la topologie Hub N Spoke. Pour être plus précis, il serait préférable de favoriser cette architecture en scindant les éléments au sein de différents réseaux. 
 
-**Create VNET**
+Aussi, dans mon cas je n'ai pas de réseau d'Entreprise à relier à notren infrastructure. Je vais donc créer une machine virtuelle directement dans le réseau de test. Dans un monde idéal, il serait préférable d'utiliser une machine locale, reliée au réseau d'enterprise, lui même relié au service Azure via une Express Route.
+
+_Dans cette partie, nous allons créer les ressources réseaux nécessaire au regroupement de nos services._
+
+**Creation du VNET**
+
+Depuis le groupe de ressource : Créer > rechercher _Virtual Network_ > Créer une ressource. 
+
+Dans l'onglet **Basics**, choisir le groupe de ressources créé précédemment, définir le nom et la région du réseau virtuel.
 
 <img src="https://github.com/user-attachments/assets/2355d410-83c6-4711-9c69-5134efa75b6a" width="500">
+
+Dans l'onglet **Security**, activer la feature ```Azure Bastion```, qui nous permettra d'accéder à la machine virtuelle depuis un onglet web, évitant ainsi d'ouvrir un port nécessaire au contrôle à distance. 
+
 <img src="https://github.com/user-attachments/assets/e7170bdb-dd44-40ed-b6fe-3738a641e106" width="500">
+
+Dans l'onglet **IP Adresses**, définir les plages réseaux nécessaires à notre infrastructure. Dans mon cas, le nombre d'adresse est très petit, il est possible de limiter le nombre d'adresses réservées à notre cas de test. 
+
 <img src="https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8" width="500">
 
-**Create VM** 
+**Creation de la machine virtuelle**
 
-<img src="https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1" width="300">
-<img src="https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506" width="300">
-<img src="https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba" width="300">
-<img src="https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345" width="300">
+Une fois le réseau virtuel créé, nous allons créer une machine virtuelle permettant de simuler un poste utilisateur intégré à un réseau privé.
 
+Depuis le groupe de ressource : Créer > rechercher _Virtual Machine_ > Créer une ressource. 
+
+Dans l'onglet **Basics**, renseigner le groupe de ressources, 
+
+<img src="https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1" width="500">
+<img src="https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506" width="500">
+<img src="https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba" width="500">
+<img src="https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345" width="500">
 
 **Create PE** 
+
 <img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="300">
 <img src="https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc" width="300">
 <img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="300">
