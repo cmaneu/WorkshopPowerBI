@@ -1,4 +1,4 @@
-# Introduction & Architecture Générale
+![image](https://github.com/user-attachments/assets/90529214-996c-4176-8ebd-4aa797e65aeb)# Introduction & Architecture Générale
 
 L'objectif de ce pas à pas est de proposer un environnement de travail au sein de Microsoft Fabric avec les leviers de sécurité d'accès les plus restrictifs. Nous allons découvrir comment fournir l'accès aux ressources uniquement depuis le réseau interne d'une entreprise ou d'une organisation, pour être capable de développer un Notebook Spark au sein de Microsoft Fabric, qui aurait besoin d'atteindre des données contenues dans un Data Lake au sein d'Azure. L'échange entre l'utilisateur et la plateforme se fait ne manière privée, et l'échange entre Microsoft Azure et Microsoft Fabric se fait lui aussi de manière privée.
 
@@ -130,8 +130,26 @@ Dans l'onglet **IP Adresses**, définir les plages réseaux nécessaires à notr
 
 **Création du Private Endpoint pour Power BI & Microsoft Fabric** 
 
+Depuis le groupe de ressource : Créer > rechercher _Private Endpoint_ > Créer une ressource. 
+
+Dans l'onglet **Basics**, renseigner le de resource group ainsi que le nom du private endpoint :  
+
 <img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="500">
+
+Dans l'onglet Resource, choisir Microsoft.PowerBI/privateLinkServicesForPowerBI pour le type de resources, puis dans le menu déroulant, choisir le service créé à l'aidu du template ARM plus tôt dans ce lab. Pour la sous ressource, choisir _tenant_. 
+
 <img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="500">
+
+Dans l'onglet **Virtual Network**, choisir le VNET créé plus tôt, et laisser le sous-réseau par défaut : 
+
+<img src="https://github.com/user-attachments/assets/ba171ea8-73a1-4a3f-8754-4e12e684ca1a" width="500">
+
+Dans l'onglet **DNS**, définir les 3 DNS Private Zone pour notre service (ils doivent être renseignés par défaut) : 
+  - _(New)privatelink.analysis.windows.net_
+  - _(New)privatelink.pbidedicated.windows.net_
+  - _(New)privatelink.prod.powerquery.microsoft.com_
+
+<img src="https://github.com/user-attachments/assets/569ead0d-1dc0-4604-820b-39b043f03384" width="500">
 
 ## 5. Creation de la machine virtuelle
 
@@ -159,8 +177,19 @@ Dans l'onglet **Advanced**, préférez l'activation de l'Auto Shutdown pour évi
 
 **Connect via Bastion** 
 
+Une fois la machine créée, nous allons nous y connecter via Azure Bastion : Retrouver la ressource créée dans le portail, dans les menus latéraux se rendre dans Connect > Bastion > renseigner le username & password > Cliquer sur connect. 
+
+<img src="https://github.com/user-attachments/assets/5535616a-3938-4f2d-9f67-d863170f839d" width="500">
+
+Une fois connecté à la VM, démarrer une invite de commande : Menu Windows > tapper _cmd_. 
+
+Retourner sur le portail Azure, trouver la ressource _private endpoint_ créée précédement, et se rendre dans Settings > DNS Configuration : copier la valeur dans la colonne FQDN :
+
+<img src="https://github.com/user-attachments/assets/a68193ae-8274-4697-9874-5c8957cbcd9a" width="500">
+
 Ns lookup : 
-<img src="https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3" width="300">
+
+<img src="https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3" width="500">
 
 Test desac
 <img src="https://github.com/user-attachments/assets/8e65693c-b43a-4f8b-9186-d691f3f76f73" width="300">
