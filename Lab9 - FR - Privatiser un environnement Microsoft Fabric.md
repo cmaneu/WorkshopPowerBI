@@ -65,6 +65,7 @@ Nous allons créer un groupe de ressources pour contenir l'ensemble de nos servi
 <img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="500">
 
 **Création du private Link Service pour Power BI (même pour Microsoft Fabric, cela s'appelle Power BI) :**
+
 Une fois le resource group créé > Dans le centre de notifcation, accéder au groupe de ressources > Choisir Créer dans l'en-tête > Rechercher ```Template deployment``` > Créer. Ce template nous permet de créer une ressource via du Code sans passer par les différents menus. 
 
 <img src="https://github.com/user-attachments/assets/796576ae-db3a-4b57-b5df-62234418f900" width="300">
@@ -74,6 +75,23 @@ Une fois le resource group créé > Dans le centre de notifcation, accéder au g
 Une fois le bloc de code apparu à l'écran : copier le code ci-dessous, en remplaçant : 
 - La valeur de l'attribut name pour le nom du private link service
 - La valeur de l'attribut tenantId pour l'ID de l'environnement récupéré sur Power BI.
+```{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [
+      {
+          "type":"Microsoft.PowerBI/privateLinkServicesForPowerBI",
+          "apiVersion": "2020-06-01",
+          "name" : "<resource-name>",
+          "location": "global",
+          "properties" : 
+          {
+               "tenantId": "<tenant-object-id>"
+          }
+      }
+  ]
+}```
 
 Une fois renseigné, passer les onglets de création en renseignant les informations liées au resource group, puis Valider la création : 
 
