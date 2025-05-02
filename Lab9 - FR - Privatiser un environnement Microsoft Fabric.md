@@ -54,8 +54,12 @@ Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur 
 <img src="https://github.com/user-attachments/assets/eda6e8f3-7528-4452-acbd-5e5cd6cccd8c" width="300">
 <img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
 
-Depuis le portail Azure : ```https://portal.azure.com```
-<img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="300">
+**Création des ressources dans Azure :**
+
+Depuis le portail Azure : ```https://portal.azure.com``` : 
+Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher "resource group" (il est préférable de ne filtrer que les services Azure) > puis Créer. 
+
+<img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="500">
 <img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="300">
 
 Once created click 
