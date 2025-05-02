@@ -212,14 +212,30 @@ S'il on essaye d'accéder au portail directement depuis un navigateur, en dehors
 
 # 1. Création d'un compte de stockage 
 
-<img src="https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8" width="500">
+Pour continuer notre cas d'usage nous avons besoin de stocker des données au sein d'Azure Data Lake Storage Gen 2. 
+Depuis le portail, Créer une ressource > Rechercher _Storage Account_ > Créer. 
+
+Dans l'onglet **Basics**, renseigner le resource group, la region ainsi que le nom de la resource (sans majuscule ni caractères spéciaux). 
+
+<img src="https://github.com/user-attachments/assets/967bc46a-c23c-48f0-a285-430ec8f39bc8" width="600">
+
+Dans l'onglet **Advanced**, activer _Enable Storage Account Key Access_ pour utiliser la clé du compte plus tard, puis Enable Hierarchical Namespace qui permet de transformer le compte de stockage classique en data lake : 
+
+<img src="https://github.com/user-attachments/assets/99c078b6-8009-482a-a211-cf278d342f99" width="500">
+
+Dans l'onglet networking, désactiver l'accès publique au compte de stockage. 
+
 <img src="https://github.com/user-attachments/assets/63a69146-5ef2-434c-aae4-9ae169d8364f" width="500">
-<img src="https://github.com/user-attachments/assets/a13ae6b9-47ee-4cb2-868f-22052cbbecbf" width="500">
+
+Terminer la création du compte de stockage. Une fois créé, depuis les menus latéraux, Data Storage > Containers > et créer un container. Pour aller plus loin dans la démo, il est possible d'alimenter ce compte de stockage avec des données. (Pour cela, il faut soit l'alimenter depuis l'intérieur du réseau, soit le charger manuellement en ré-activant la partie réseau publique temporairement). 
+
 <img src="https://github.com/user-attachments/assets/7abcac83-4384-4aa9-8764-102ba547e8cf" width="500">
 
 # 2. Creation du workspace au sein de Microsoft Fabric : 
 
-<img src="https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9" width="300">
+Depuis le portail Fabric, Créer un workspace, l'attribuer à une capacité Fabric depuis le menu **Advanced**
+
+<img src="https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9" width="500">
 
 # . Création des deux Private Endpoints vers ADLS Gen 2 : 
 
