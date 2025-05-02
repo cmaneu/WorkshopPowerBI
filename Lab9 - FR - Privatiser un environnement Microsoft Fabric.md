@@ -143,16 +143,19 @@ Depuis le groupe de ressource : Créer > rechercher _Virtual Machine_ > Créer u
 Dans l'onglet **Basics**, renseigner le groupe de ressources, le nom de la machine virtuelle. 
 Pour notre test, Choisir ```No Infrastrcuture redundancy required``` pour le niveau de disponibilité, > ```Standard``` pour le Security Type. Pour la taille de la VM, choisri quelque chose de simple : ```Standard_D2s_V6``` par exemple, avec une image ```Windows Server 2022```. 
 
+<img src="https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1" width="500">
+
 Plus bas, renseigner le compte Administrateur ainsi que le mot de passe pour s'authentifier. 
 Désactiver l'ensemble des ports entrants en selectionnant "None". 
 
-x
-<img src="https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1" width="500">
-y
 <img src="https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506" width="500">
-z
+
+Passer l'onglet **Disks**, et dans l'onglet **Networking**, renseigner le VNET créé auparavant. 
+
 <img src="https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba" width="500">
-w
+
+Dans l'onglet **Advanced**, préférez l'activation de l'Auto Shutdown pour éviter de consommer des ressources inutilement :
+
 <img src="https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345" width="500">
 
 **Connect via Bastion** 
