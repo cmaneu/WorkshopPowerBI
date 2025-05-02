@@ -42,6 +42,8 @@ Pour ce pas à pas, nous aurons besoin :
 
 # Pas à pas 
 
+Il existe une documentation Microsoft permettant de créer un Private Link pour Power BI et Microsoft Fabric. Je reprends ces éléments en détail pour le début du lab. 
+
 **Activation des features dans le portail Power BI :**
 
 Dans le portail d'administration Power BI, nous allons activer la feature permettant d'utiliser les Private Links : Accéder au portail d'administartion, rechercher les paramètres réseaux avancés, et activer la feature : 
@@ -57,19 +59,15 @@ Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur 
 **Création des ressources dans Azure :**
 
 Depuis le portail Azure : ```https://portal.azure.com``` : 
-Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher "resource group" (il est préférable de ne filtrer que les services Azure) > puis Créer. 
+Nous allons créer un groupe de ressources pour contenir l'ensemble de nos services Azure. Dans le volet latéral > créer une ressource > rechercher "resource group" (il est préférable de ne filtrer que les services Azure) > Créer > Choisir la souscription retenue, et renseigner le nom du groupe de ressources. 
 
 <img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="500">
-<img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="300">
+<img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="500">
 
-Once created click 
+Une fois le resource group créé > Dans le centre de notifcation, accéder au groupe de ressources > Choisir Créer dans l'en-tête, et créer un template ARM. Ce template nous permet de créer une ressource via du Code sans passer par les différents menus. 
+
 <img src="https://github.com/user-attachments/assets/796576ae-db3a-4b57-b5df-62234418f900" width="300">
-
-
-In RG, create item 
 <img src="https://github.com/user-attachments/assets/9c076b8e-e2d5-4eb5-b71f-43469ba176d0" width="300">
-
-Create Template 
 <img src="https://github.com/user-attachments/assets/3dd14a61-365e-4f5b-85d9-c15de5bec98b" width="300">
 
 Change variables 
