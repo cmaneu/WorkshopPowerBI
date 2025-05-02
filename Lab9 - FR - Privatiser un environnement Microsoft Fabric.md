@@ -237,13 +237,23 @@ Depuis le portail Fabric, Créer un workspace, l'attribuer à une capacité Fabr
 
 <img src="https://github.com/user-attachments/assets/c24cd867-8b60-432b-a6d6-98e0f1979bf9" width="500">
 
-# . Création des deux Private Endpoints vers ADLS Gen 2 : 
+# 3. Création des deux Private Endpoints vers ADLS Gen 2 : 
+
+Une fois le workspace créé, naviguer dans le workspace et cliquer sur Settings. Dans le menu latéral, choisir Network Security > puis dans Managed Private Endpoint > Créér. Nous allons créer un private endpoint depuis notre workspace vers l'ADLS Gen 2 créé auparavant. 
+
+<img src="https://github.com/user-attachments/assets/6db69e94-632f-4422-8d5f-ef9358f10dd0" width="500">
+
+Définir le nom du private endpoint, puis renseigner les éléments du compte de stockage en remplaçant les valeurs : 
 
 ```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Storage/storageAccounts/{storage-account-name}```
 
+Par exemple, dans notre cas : (ces valeurs peuvent être retrouvées dans 
+
 ```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.Storage/storageAccounts/safabricprivate```
 
-<img src="https://github.com/user-attachments/assets/afdf748a-13a8-4bf9-8567-6e3173109ce4" width="300">
+<img src="https://github.com/user-attachments/assets/afdf748a-13a8-4bf9-8567-6e3173109ce4" width="500">
+
+Une fois créé, on le retrouve dans 
 <img src="https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397" width="300">
 
 <img src="https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546" width="300">
