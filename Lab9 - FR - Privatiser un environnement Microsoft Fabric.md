@@ -49,9 +49,12 @@ Dans le portail d'administration Power BI, nous allons activer la feature permet
 <img src="https://github.com/user-attachments/assets/638cbb9f-7586-41c0-a6fb-2809fddb171d" width="300">
 <img src="https://github.com/user-attachments/assets/4fcba74a-4e9e-4aff-b505-18f8c48cb04f" width="400">
 
-Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : 
+Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur "?" dans l'en-tête > About Power BI > et copier le GUID après _ctid=_. Nous allons noter cet ID pour plus tard. 
 
-Dans Azure : 
+<img src="https://github.com/user-attachments/assets/eda6e8f3-7528-4452-acbd-5e5cd6cccd8c" width="300">
+<img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
+
+Depuis le portail Azure : ```https://portal.azure.com```
 <img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="300">
 <img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="300">
 
@@ -68,9 +71,7 @@ Create Template
 Change variables 
 <img src="https://github.com/user-attachments/assets/4d72d13c-183e-436c-8328-205af0a96310" width="300">
 
-Get About Pbi 
-<img src="https://github.com/user-attachments/assets/eda6e8f3-7528-4452-acbd-5e5cd6cccd8c" width="300">
-<img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
+
 
 <img src="https://github.com/user-attachments/assets/550dd9a7-6823-45a1-bb5a-98af24b5096d" width="300">
 
