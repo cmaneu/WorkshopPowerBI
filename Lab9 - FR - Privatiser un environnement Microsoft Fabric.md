@@ -1,13 +1,33 @@
 # Introduction & Architecture Générale
 
-L'objectif de ce pas à pas est de proposer un environnement de travail au sein de Microsoft Fabric avec les leviers de sécurité d'accès les plus restrictifs. Le but est de fournir l'accès aux ressources uniquement depuis le réseau interne d'une entreprise ou d'une organisation. Nous allons pas à pas déployer un environnement qui respecte les contraintes suivantes : 
+L'objectif de ce pas à pas est de proposer un environnement de travail au sein de Microsoft Fabric avec les leviers de sécurité d'accès les plus restrictifs. Nous allons découvrir comment fournir l'accès aux ressources uniquement depuis le réseau interne d'une entreprise ou d'une organisation, pour être capable de développer un Notebook Spark au sein de Microsoft Fabric, qui aurait besoin d'atteindre des données contenues dans un Data Lake au sein d'Azure. L'échange entre l'utilisateur et la plateforme se fait ne manière privée, et l'échange entre Microsoft Azure et Microsoft Fabric se fait lui aussi de manière privée.
+
+Nous allons pas à pas déployer un environnement qui respecte les contraintes suivantes : 
   - Utilisation du Private Link : Les échanges avec Power BI et/ou Microsoft Fabric sont fait via le réseau Azure, et non via Internet. Cela permet de contrôler le point d'entrée des utilisateur, ainsi que les intéreactions avec les données qui transitent vers et en dehors de Microsoft Fabric. 
   - Désactivation de l'accès depuis Internet public : Non seulement l'accès se fait via les services interne Azure, mais en plus l'accès au portail ne peut plus se faire via l'IP publique du service.
-  - Désactivation des accès public aux ressources dans Azure : En désactivant les accès au Key Vault (container des clés d'identifications) ou à ADLS Gen2 (container des données) via un réseau public, on interdit aussi les accès depuis n'importe quel endroit
+  - Désactivation des accès public aux ressources dans Azure : En désactivant les accès au Key Vault (container des clés d'identification) ou à ADLS Gen2 (container des données) via un réseau public, on interdit aussi les accès depuis n'importe quel endroit
   - Utilisation de private endpoints pour les services Azure : On définit un point d'entrée approuvé pour accéder aux ressources Azure, ce point d'entrée est donc strictement réservé à un service ou un usage.
   - Consommations des services Azure via Microsoft Fabric de manière privée : Une fois l'accès au portail restreint, les échanges entre le service et les ressources maîtrisé, les utilisateurs et développeurs évolueront dans un environnement cloisoné.  
 
+**Notes & Limitations :**
+  - Managed Private Network : Lorsqu'un Administrateur active le private Link, le lancement d'un notebook Spark générera automatiquement l'usage de Managed Virtual Network pour instancier les ressources de calcul Spark. Ce cluster n'est pas accessible depuis le réseau public. L'instanciation des ressources au sein de ce Managed Virtual Network est plus long que lorsqu'on l'utilise de manière publique, le démarrage d'une session passe de 30 secondes environ à 4 minutes.
+     
+  - Starter Pools : Il est possible de lancer un Notebook Spark sans se soucier de la configuration des ressources de calculs utilisées. Dans ce cas, ce pool de ressource appelé _Starter Pool_ sera instancié et possède une taille standard mais non optimale pour exécuter les calculs. Lors de la privatisation des ressources, ce Starter Pool n'est plus disponible, et il est donc nécessaire d'en créer un avec une taille définie directement au sein du Workspace par exemple pour être capable d'exécuter notre Notebook.  
+
 Une fois ces différents pré-requis validés, nous allons voir comment nous pouvons utiliser Microsoft Fabric pour transformer nos données et les faire évoluer dans notre environnement. 
+
+**Architecture générale :** 
+
+![image](https://github.com/user-attachments/assets/ab850c9f-8417-478f-bf26-a90a1baad66a)
+
+Le principe d'usage d'Azure Private Link : 
+
+![image](https://github.com/user-attachments/assets/7f91498a-05b8-4a74-94f9-0d4b9874e5d1)
+
+Le principe des Managed Virtual Networks pour Spark : 
+
+![image](https://github.com/user-attachments/assets/19680d01-5188-474d-aa20-404579459f21)
+
 
 # Pré requis
 
