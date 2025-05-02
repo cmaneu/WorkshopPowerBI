@@ -44,7 +44,7 @@ Pour ce pas à pas, nous aurons besoin :
 
 Il existe une documentation Microsoft permettant de créer un Private Link pour Power BI et Microsoft Fabric. Je reprends ces éléments en détail pour le début du lab : https://learn.microsoft.com/en-us/fabric/security/security-private-links-use 
 
-**1. Activation des features dans le portail Power BI :**
+## 1. Activation des features dans le portail Power BI :
 
 _Dans cette partie, nous allons activer la feature Private Link qui nous permet d'accéder aux ressources via le Backbone Azure._
 
@@ -58,7 +58,7 @@ Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : Cliquer sur 
 <img src="https://github.com/user-attachments/assets/eda6e8f3-7528-4452-acbd-5e5cd6cccd8c" width="300">
 <img src="https://github.com/user-attachments/assets/02293db2-0d6b-4358-afbc-13b49ba1d705" width="300">
 
-**2. Création du groupe de ressources dans Azure :**
+## 2. Création du groupe de ressources dans Azure :
 
 _Dans cette partie, nous allons créer le container de nos ressources ainsi que le service private Link côté Azure._
 
@@ -68,7 +68,7 @@ Nous allons créer un groupe de ressources pour contenir l'ensemble de nos servi
 <img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="500">
 <img src="https://github.com/user-attachments/assets/ef9ced03-cb39-47ce-9876-d7cadd99b1b5" width="500">
 
-**3. Création du private Link Service pour Power BI (même pour Microsoft Fabric, cela s'appelle Power BI) :**
+## 3. Création du private Link Service pour Power BI (même pour Microsoft Fabric, cela s'appelle Power BI) :
 
 Une fois le resource group créé > Dans le centre de notifcation, accéder au groupe de ressources > Choisir Créer dans l'en-tête > Rechercher ```Template deployment``` > Créer. Ce template nous permet de créer une ressource via du Code sans passer par les différents menus. 
 
@@ -104,7 +104,7 @@ Une fois renseigné, passer les onglets de création en renseignant les informat
 <img src="https://github.com/user-attachments/assets/550dd9a7-6823-45a1-bb5a-98af24b5096d" width="400">
 <img src="https://github.com/user-attachments/assets/a4777ba1-5507-4316-b382-6f416a26fb23" width="500">
 
-**4. Création des services réseau**
+## 4. Création des services réseau
 
 L'architecture réseau ne respecte pas aujourd'hui la topologie Hub N Spoke. Pour être plus précis, il serait préférable de favoriser cette architecture en scindant les éléments au sein de différents réseaux. 
 
@@ -128,7 +128,13 @@ Dans l'onglet **IP Adresses**, définir les plages réseaux nécessaires à notr
 
 <img src="https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8" width="500">
 
-**Creation de la machine virtuelle**
+**Create PE** 
+
+<img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="300">
+<img src="https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc" width="300">
+<img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="300">
+
+## 5. Creation de la machine virtuelle
 
 Une fois le réseau virtuel créé, nous allons créer une machine virtuelle permettant de simuler un poste utilisateur intégré à un réseau privé.
 
@@ -140,12 +146,6 @@ Dans l'onglet **Basics**, renseigner le groupe de ressources,
 <img src="https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506" width="500">
 <img src="https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba" width="500">
 <img src="https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345" width="500">
-
-**Create PE** 
-
-<img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="300">
-<img src="https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc" width="300">
-<img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="300">
 
 **Connect via Bastion** 
 
