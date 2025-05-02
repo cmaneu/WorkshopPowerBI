@@ -20,15 +20,6 @@ Une fois ces différents pré-requis validés, nous allons voir comment nous pou
 
 ![image](https://github.com/user-attachments/assets/ab850c9f-8417-478f-bf26-a90a1baad66a)
 
-Le principe d'usage d'Azure Private Link : 
-
-![image](https://github.com/user-attachments/assets/7f91498a-05b8-4a74-94f9-0d4b9874e5d1)
-
-Le principe des Managed Virtual Networks pour Spark : 
-
-![image](https://github.com/user-attachments/assets/19680d01-5188-474d-aa20-404579459f21)
-
-
 # Pré requis
 
 # Pas à pas 
