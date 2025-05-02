@@ -42,7 +42,8 @@ Pour ce pas à pas, nous aurons besoin :
 
 # Pas à pas 
 
-Enable Private Links
+Dans le portail d'administration Power BI, nous allons activé la feature permettant d'utiliser les Private Links : 
+<img src="(https://github.com/user-attachments/assets/638cbb9f-7586-41c0-a6fb-2809fddb171d)" width="100">
 ![Capture d'écran 2025-03-12 111730](https://github.com/user-attachments/assets/4fcba74a-4e9e-4aff-b505-18f8c48cb04f)
 
 Create RG
