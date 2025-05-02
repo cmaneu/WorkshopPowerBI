@@ -18,7 +18,7 @@ Une fois ces différents pré-requis validés, nous allons voir comment nous pou
 
 **Architecture générale :** 
 
-<img src="https://github.com/user-attachments/assets/ab850c9f-8417-478f-bf26-a90a1baad66a" width="600">
+<img src="https://github.com/user-attachments/assets/ab850c9f-8417-478f-bf26-a90a1baad66a">
 
 L'usage d'une VM dans Azure n'est pas nécessaire. 
 
