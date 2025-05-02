@@ -104,29 +104,26 @@ Une fois renseigné, passer les onglets de création en renseignant les informat
 
 L'architecture réseau ne respecte pas aujourd'hui la topologie Hub N Spoke. Pour être plus précis, il serait préférable de favoriser cette architecture en scindant les éléments au sein de différents réseaux. 
 
-# All in One : 
+**Create VNET**
 
-Create VNET 
-<img src="https://github.com/user-attachments/assets/2355d410-83c6-4711-9c69-5134efa75b6a" width="300">
-With Bastion
-<img src="https://github.com/user-attachments/assets/e7170bdb-dd44-40ed-b6fe-3738a641e106" width="300">
-Define Subnets
-<img src="https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8" width="300">
-Create
+<img src="https://github.com/user-attachments/assets/2355d410-83c6-4711-9c69-5134efa75b6a" width="500">
+<img src="https://github.com/user-attachments/assets/e7170bdb-dd44-40ed-b6fe-3738a641e106" width="500">
+<img src="https://github.com/user-attachments/assets/48b68d16-2f6b-4607-908d-bf8c6e09c2f8" width="500">
 
-Create VM 
+**Create VM** 
+
 <img src="https://github.com/user-attachments/assets/d04620bb-1cce-4764-8185-85198e3439f1" width="300">
 <img src="https://github.com/user-attachments/assets/1a7a8bbe-6c90-47eb-9f5d-00fd91b7a506" width="300">
 <img src="https://github.com/user-attachments/assets/954cd52f-28b7-457e-9005-839e20162fba" width="300">
 <img src="https://github.com/user-attachments/assets/8a30b3af-460f-4ac1-bb69-63d73cf4c345" width="300">
 
 
-Create PE 
+**Create PE** 
 <img src="https://github.com/user-attachments/assets/9ed19018-0238-40d5-9ce9-e89f62d761fe" width="300">
 <img src="https://github.com/user-attachments/assets/e5b272d2-3118-4fea-9be5-655170cb8edc" width="300">
 <img src="https://github.com/user-attachments/assets/63ee729e-056e-47b3-8043-3bcac9c7780d" width="300">
 
-Connect via Bastion 
+**Connect via Bastion** 
 
 Ns lookup : 
 <img src="https://github.com/user-attachments/assets/528c56c5-54a0-43e6-8998-eb5dad5cefb3" width="300">
