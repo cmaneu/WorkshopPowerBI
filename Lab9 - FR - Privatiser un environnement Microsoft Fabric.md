@@ -42,10 +42,14 @@ Pour ce pas à pas, nous aurons besoin :
 
 # Pas à pas 
 
+**Activation des features dans le portail Power BI :**
+
 Dans le portail d'administration Power BI, nous allons activer la feature permettant d'utiliser les Private Links : Accéder au portail d'administartion, rechercher les paramètres réseaux avancés, et activer la feature : 
 
 <img src="https://github.com/user-attachments/assets/638cbb9f-7586-41c0-a6fb-2809fddb171d" width="300">
 <img src="https://github.com/user-attachments/assets/4fcba74a-4e9e-4aff-b505-18f8c48cb04f" width="400">
+
+Nous allons aussi récolter l'ID de notre tenant Microsoft Fabric : 
 
 Dans Azure : 
 <img src="https://github.com/user-attachments/assets/3a2f0f70-98b0-4bee-889b-f590af92e954" width="300">
