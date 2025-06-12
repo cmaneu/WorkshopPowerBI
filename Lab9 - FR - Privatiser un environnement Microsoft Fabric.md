@@ -257,7 +257,9 @@ Une fois créé, on le retrouve dans la liste des endpoints, au statut _Activati
 
 <img src="https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397" width="500">
 
-AJOUTER LA VALIDATION CÔTE AZURE
+Dans Azure, retrouver le compte de stockage auquel on veut se connecter > Networking > Onglet Private Endpoint Connections et Approuver le private endpoint 
+
+<img src="https://github.com/user-attachments/assets/25616761-58eb-4374-b926-027510233a8c" width="500">
 
 Une fois Activé, il est au statut _Approved_ et _Succeeded_ sur Fabric : 
 
