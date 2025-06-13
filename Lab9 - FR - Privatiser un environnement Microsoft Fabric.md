@@ -284,33 +284,21 @@ Pour y arriver, toujours dans **Worksapce Settings**, déployer le menu **Worksp
 <img src="https://github.com/user-attachments/assets/c1359d7e-b59a-4308-9df3-38780dcb11d9" width="400">
 <img src="https://github.com/user-attachments/assets/b765fe16-f328-4934-9a71-de26299bd597" width="300">
 
-
-# Roles 
-<img src="https://github.com/user-attachments/assets/2165a8ac-411d-4e5d-bd6c-d58c0023824c" width="300">
-<img src="https://github.com/user-attachments/assets/2aa9286a-03ad-4e19-a647-d8319a586dfb" width="300">
-
 # Key Vault
 
-
-Nous allons répéter l'opération pour créer un private endpoint pour notre Key Vault, qui va contenir les identifiants permettant d'accéder à nos données dans notre compte de Stockage. 
-
-```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
-```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
-
-<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
-<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
-
-Toto
+Création du Key Vault dans Azure et désactivation de l'accès public : 
 
 <img src="https://github.com/user-attachments/assets/d6136e47-4c03-4fa3-a011-9fadad19517d" width="300">
-<img src="https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72" width="300">
-
-Toto
-
+<img src="https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72" width="500">
 <img src="https://github.com/user-attachments/assets/ada19118-87ae-45dc-a7db-e6ffac0ce9dc" width="300">
-<img src="https://github.com/user-attachments/assets/cf7cc421-399c-40f3-80b7-398a07f8c848" width="300">
+
+
+Create key 
+<img src="https://github.com/user-attachments/assets/a509871c-1e50-4a61-bd40-50d3f7cd1584" width="300">
 
 Toto 
+
+<img src="https://github.com/user-attachments/assets/cf7cc421-399c-40f3-80b7-398a07f8c848" width="300">
 
 <img src="https://github.com/user-attachments/assets/166f30b7-879c-413c-b71c-7c869b7da732" width="300">
 <img src="https://github.com/user-attachments/assets/a2682b80-86b0-45fc-8fd6-ee1c3648467f" width="300">
@@ -325,8 +313,15 @@ Toto
 <img src="https://github.com/user-attachments/assets/30ea44ae-4430-4a93-85dd-c173af572cd2" width="300">
 <img src="https://github.com/user-attachments/assets/04da8163-6f38-4182-bbeb-39e3a3f5ca41" width="300">
 
-Create key 
-<img src="https://github.com/user-attachments/assets/a509871c-1e50-4a61-bd40-50d3f7cd1584" width="300">
+
+Nous allons répéter l'opération pour créer un private endpoint pour notre Key Vault, qui va contenir les identifiants permettant d'accéder à nos données dans notre compte de Stockage. 
+
+
+```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
+```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
+
+<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
+<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
 
 # Use Key Vault & Notebook 
 
