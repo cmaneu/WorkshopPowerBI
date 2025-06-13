@@ -300,16 +300,28 @@ Nous allons répéter l'opération pour créer un private endpoint pour notre Ke
 <img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
 <img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
 
+Toto
+
 <img src="https://github.com/user-attachments/assets/d6136e47-4c03-4fa3-a011-9fadad19517d" width="300">
 <img src="https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72" width="300">
+
+Toto
+
 <img src="https://github.com/user-attachments/assets/ada19118-87ae-45dc-a7db-e6ffac0ce9dc" width="300">
-
-
 <img src="https://github.com/user-attachments/assets/cf7cc421-399c-40f3-80b7-398a07f8c848" width="300">
+
+Toto 
+
 <img src="https://github.com/user-attachments/assets/166f30b7-879c-413c-b71c-7c869b7da732" width="300">
 <img src="https://github.com/user-attachments/assets/a2682b80-86b0-45fc-8fd6-ee1c3648467f" width="300">
+
+Toto
+
 <img src="https://github.com/user-attachments/assets/44141c0c-f1e7-488b-acb5-26806ee7fb69" width="300">
 <img src="https://github.com/user-attachments/assets/d9fa770d-a26c-4dfb-8305-58a0d60f6777" width="300">
+
+Toto 
+
 <img src="https://github.com/user-attachments/assets/30ea44ae-4430-4a93-85dd-c173af572cd2" width="300">
 <img src="https://github.com/user-attachments/assets/04da8163-6f38-4182-bbeb-39e3a3f5ca41" width="300">
 
