@@ -256,6 +256,7 @@ Par exemple, dans notre cas : (ces valeurs peuvent être retrouvées dans
 Une fois créé, on le retrouve dans la liste des endpoints, au statut _Activating_. 
 
 <img src="https://github.com/user-attachments/assets/4d1f3787-4515-49b0-ab56-367d308bc397" width="500">
+<img src="https://github.com/user-attachments/assets/ced69224-96ba-422a-a683-e99af82ed63a" width="500">
 
 Dans Azure, retrouver le compte de stockage auquel on veut se connecter > Networking > Onglet Private Endpoint Connections et Approuver le private endpoint 
 
@@ -265,18 +266,16 @@ Une fois Activé, il est au statut _Approved_ et _Succeeded_ sur Fabric :
 
 <img src="https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546" width="500">
 
-```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
-```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
-
-<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
-<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
-
 # Workspace Identities
 
-<img src="https://github.com/user-attachments/assets/ced69224-96ba-422a-a683-e99af82ed63a" width="300">
+Une fois le lien réalisé entre Azure et notre compte de stockage, nous allons définir la méthode permettant de se connecter à notre Key Vault. Pour y accéder, il est possible d'utiliser l'identité managée du workspace Fabric : ce n'est pas l'utilisateur qui développe le notebook qui accède au Key Vault mais bien le workspace lui même.  
+
 <img src="https://github.com/user-attachments/assets/68649b63-1378-42cb-93d3-47d51d13604b" width="300">
 
 <img src="https://github.com/user-attachments/assets/c6557c00-72a7-4118-887b-118fc68f1034" width="300">
+
+Toto 
+
 <img src="https://github.com/user-attachments/assets/c1359d7e-b59a-4308-9df3-38780dcb11d9" width="300">
 <img src="https://github.com/user-attachments/assets/b765fe16-f328-4934-9a71-de26299bd597" width="300">
 
@@ -288,6 +287,16 @@ Une fois Activé, il est au statut _Approved_ et _Succeeded_ sur Fabric :
 <img src="https://github.com/user-attachments/assets/2aa9286a-03ad-4e19-a647-d8319a586dfb" width="300">
 
 # Key Vault
+
+
+Nous allons répéter l'opération pour créer un private endpoint pour notre Key Vault, qui va contenir les identifiants permettant d'accéder à nos données dans notre compte de Stockage. 
+
+```/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}```
+```/subscriptions/ecaa47e5-79d1-47e4-ac93-80b1484c3dbf/resourceGroups/rg-private-fabric-all-in/providers/Microsoft.KeyVault/vaults/kv-private-gennaker```
+
+<img src="https://github.com/user-attachments/assets/81b4726b-42e7-45cf-b26c-ee9ff2cfe0fd" width="300">
+<img src="https://github.com/user-attachments/assets/0c252fd4-f053-490c-87c2-9a496f807e1f" width="300">
+
 <img src="https://github.com/user-attachments/assets/d6136e47-4c03-4fa3-a011-9fadad19517d" width="300">
 <img src="https://github.com/user-attachments/assets/efa8ce05-e461-4602-a57d-62597a8baa72" width="300">
 <img src="https://github.com/user-attachments/assets/ada19118-87ae-45dc-a7db-e6ffac0ce9dc" width="300">
