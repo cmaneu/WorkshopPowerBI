@@ -270,19 +270,20 @@ Attention, une fois le Private Endpoint déployé et utilisé, il sera impossibl
 
 <img src="https://github.com/user-attachments/assets/c6557c00-72a7-4118-887b-118fc68f1034" width="600">
 
+Pour le créer, ans **Worksapce Settings**, déployer le menu **Data Engineering**, créer et définir le pool Spark par défaut :  
+
+<img src="https://github.com/user-attachments/assets/3c4b5b94-e748-4231-8996-836927eaec84" width="400">
+<img src="https://github.com/user-attachments/assets/97cca32a-8cb0-40de-bf04-d41621b245db" width="400">
 
 # Workspace Identities
 
 Une fois le lien réalisé entre Azure et notre compte de stockage, nous allons définir la méthode permettant de se connecter à notre Key Vault. Pour y accéder, il est possible d'utiliser l'identité managée du workspace Fabric : ce n'est pas l'utilisateur qui développe le notebook qui accède au Key Vault mais bien le workspace lui même.  
 
+Pour y arriver, toujours dans **Worksapce Settings**, déployer le menu **Workspace Identity** et cliquer sur **+ Workspace Identity** 
 
-Toto 
-
-<img src="https://github.com/user-attachments/assets/c1359d7e-b59a-4308-9df3-38780dcb11d9" width="300">
+<img src="https://github.com/user-attachments/assets/c1359d7e-b59a-4308-9df3-38780dcb11d9" width="400">
 <img src="https://github.com/user-attachments/assets/b765fe16-f328-4934-9a71-de26299bd597" width="300">
 
-<img src="https://github.com/user-attachments/assets/3c4b5b94-e748-4231-8996-836927eaec84" width="300">
-<img src="https://github.com/user-attachments/assets/97cca32a-8cb0-40de-bf04-d41621b245db" width="300">
 
 # Roles 
 <img src="https://github.com/user-attachments/assets/2165a8ac-411d-4e5d-bd6c-d58c0023824c" width="300">
