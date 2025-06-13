@@ -266,13 +266,15 @@ Une fois Activé, il est au statut _Approved_ et _Succeeded_ sur Fabric :
 
 <img src="https://github.com/user-attachments/assets/893f2e18-2156-4fd3-a90a-b30f7a54a546" width="500">
 
+Attention, une fois le Private Endpoint déployé et utilisé, il sera impossible d'utiliser le Pool Spark par défaut : rien de grave, simplement il faut en créer un dédié. Pas de surcout additionnel ici, mais cela demande simplement plus de paramétrage. Dans l'absolu, c'est une bonne chose, il faut adapter son pool spark à ses besoins et ne pas utiliser un pool par défaut. 
+
+<img src="https://github.com/user-attachments/assets/c6557c00-72a7-4118-887b-118fc68f1034" width="600">
+
+
 # Workspace Identities
 
 Une fois le lien réalisé entre Azure et notre compte de stockage, nous allons définir la méthode permettant de se connecter à notre Key Vault. Pour y accéder, il est possible d'utiliser l'identité managée du workspace Fabric : ce n'est pas l'utilisateur qui développe le notebook qui accède au Key Vault mais bien le workspace lui même.  
 
-<img src="https://github.com/user-attachments/assets/68649b63-1378-42cb-93d3-47d51d13604b" width="300">
-
-<img src="https://github.com/user-attachments/assets/c6557c00-72a7-4118-887b-118fc68f1034" width="300">
 
 Toto 
 
